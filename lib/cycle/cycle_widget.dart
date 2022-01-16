@@ -1,3 +1,6 @@
+import 'package:mitra/components/menstrual_flow_green_widget.dart';
+import 'package:mitra/components/menstrual_flow_widget.dart';
+
 import '../components/completedtask_widget.dart';
 import '../components/cycle2_widget.dart';
 import '../components/cycles2_widget.dart';
@@ -128,7 +131,8 @@ class _CycleWidgetState extends State<CycleWidget> {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Cycles2Widget(),
+                    MenstrualFlowWidget(),
+                    MenstrualFlowGreenWidget()
                   ],
                 ),
               ),
