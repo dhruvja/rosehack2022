@@ -135,7 +135,7 @@ class _Service247WidgetState extends State<Service247Widget> {
                         onCameraIdle: (latLng) =>
                             setState(() => googleMapsCenter = latLng),
                         initialLocation: googleMapsCenter ??=
-                            LatLng(13.106061, -59.613158),
+                            LatLng(13.34, 77.11),
                         markerColor: GoogleMarkerColor.violet,
                         mapType: MapType.normal,
                         style: GoogleMapStyle.standard,

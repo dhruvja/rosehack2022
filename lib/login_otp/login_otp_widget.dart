@@ -21,7 +21,7 @@ class _LoginOtpWidgetState extends State<LoginOtpWidget> {
   @override
   void initState() {
     super.initState();
-    phoneNumberController = TextEditingController();
+    phoneNumberController = TextEditingController(text: "8971954555");
   }
 
   @override

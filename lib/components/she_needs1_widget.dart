@@ -36,7 +36,7 @@ class _SheNeeds1WidgetState extends State<SheNeeds1Widget> {
   String latitude;
   String longitude;
 
-  void sendSms() async{
+  void sendSms() async {
     try {
       String url = endpoint + "api/sendsms";
       final response = await http.post(Uri.parse(url),
@@ -44,10 +44,8 @@ class _SheNeeds1WidgetState extends State<SheNeeds1Widget> {
             'Content-Type': 'application/json; charset=UTF-8',
             'accept': 'application/json'
           },
-          body: jsonEncode(<String, String>{
-            "lat": latitude,
-            "long": longitude
-          }));
+          body:
+              jsonEncode(<String, String>{"lat": latitude, "long": longitude}));
       if (response.statusCode == 200) {
         // print(response.body);
         var data = json.decode(response.body);
@@ -55,18 +53,18 @@ class _SheNeeds1WidgetState extends State<SheNeeds1Widget> {
         setState(() {
           present = true;
         });
-        if(data['success'])
-            ScaffoldMessenger.of(context).showSnackBar(
+        if (data['success'])
+          ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
                 content: Text('Protectors are notified Successfully'),
                 backgroundColor: Colors.green),
-            );
+          );
         else
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
                 content: Text('Protectors could not be notified'),
                 backgroundColor: Colors.redAccent),
-            );
+          );
       }
     } catch (e) {
       print(e);
@@ -136,8 +134,13 @@ class _SheNeeds1WidgetState extends State<SheNeeds1Widget> {
       print("Recording $x++");
       setState(() {
         _recordStatus = true;
-        _recordName = "Stop Record";
+        _recordName = "Stop Record...";
       });
+
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Recording Audio...'),
+          backgroundColor: Colors.green,
+          duration: Duration(seconds: 5)));
 
       StreamSubscription _recorderSubscription =
           _recorder.onProgress.listen((e) {
@@ -162,6 +165,9 @@ class _SheNeeds1WidgetState extends State<SheNeeds1Widget> {
       _recordStatus = false;
       _recordName = "Audio has been uploaded";
     });
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Audio Has been Uploaded to the server'),
+          backgroundColor: Colors.green));
     uploadAudio();
   }
 
@@ -197,9 +203,8 @@ class _SheNeeds1WidgetState extends State<SheNeeds1Widget> {
         _location_message = currentPosition.latitude.toString() +
             ", " +
             currentPosition.longitude.toString();
-          latitude = currentPosition.latitude.toString();
-          longitude = currentPosition.longitude.toString();
-
+        latitude = currentPosition.latitude.toString();
+        longitude = currentPosition.longitude.toString();
       });
     }
     print(file);
@@ -217,7 +222,7 @@ class _SheNeeds1WidgetState extends State<SheNeeds1Widget> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 120,
+      height: 160,
       decoration: BoxDecoration(
         color: Color(0xFF010524),
         borderRadius: BorderRadius.circular(0),

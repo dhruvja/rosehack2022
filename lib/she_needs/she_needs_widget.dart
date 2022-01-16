@@ -100,7 +100,7 @@ class _SheNeedsWidgetState extends State<SheNeedsWidget> {
                       controller: googleMapsController,
                       onCameraIdle: (latLng) => googleMapsCenter = latLng,
                       initialLocation: googleMapsCenter ??=
-                          LatLng(13.106061, -59.613158),
+                          LatLng(13.106061, 77.11),
                       markerColor: GoogleMarkerColor.violet,
                       mapType: MapType.normal,
                       style: GoogleMapStyle.standard,

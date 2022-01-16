@@ -54,7 +54,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                                     shape: BoxShape.circle,
                                   ),
                                   child: Image.asset(
-                                    'assets/images/UI_avatar@2x.png',
+                                    'assets/images/UI_avatar@2x.jpeg',
                                   ),
                                 ),
                               ),
@@ -77,7 +77,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                '[User Name]',
+                                'Amy',
                                 style: FlutterFlowTheme.title3.override(
                                   fontFamily: 'Lexend Deca',
                                   color: Colors.white,
@@ -94,7 +94,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                '[username@domain.com]',
+                                'Amy123@gmail.com',
                                 style: FlutterFlowTheme.subtitle2.override(
                                   fontFamily: 'Lexend Deca',
                                   color: Color(0xFFEE8B60),
@@ -158,7 +158,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                                         shape: BoxShape.circle,
                                       ),
                                       child: Image.asset(
-                                        'assets/images/UI_avatar@2x.png',
+                                        'assets/images/UI_avatar@2x.jpeg',
                                       ),
                                     ),
                                   ),
@@ -175,7 +175,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                             child: Text(
-                              '[User Name Here]',
+                              'Amy',
                               style: FlutterFlowTheme.title1.override(
                                 fontFamily: 'Lexend Deca',
                                 color: Colors.white,
@@ -193,7 +193,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                             child: Text(
-                              'User.name@domainname.com',
+                              'amy123@gmail.com',
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Lexend Deca',
                                 color: Color(0xFFEE8B60),

@@ -40,7 +40,7 @@ class _AmbulanceWidgetState extends State<AmbulanceWidget> {
     getLocation();
   }
 
-  
+
   void getPlaces1() async {
     String endpoint = Endpoint();
     try {
@@ -160,7 +160,7 @@ class _AmbulanceWidgetState extends State<AmbulanceWidget> {
                         controller: googleMapsController,
                         onCameraIdle: (latLng) => googleMapsCenter = latLng,
                         initialLocation: googleMapsCenter ??=
-                            LatLng(13.106061, -59.613158),
+                            LatLng(13.34, 77.11),
                         markerColor: GoogleMarkerColor.violet,
                         mapType: MapType.normal,
                         style: GoogleMapStyle.standard,

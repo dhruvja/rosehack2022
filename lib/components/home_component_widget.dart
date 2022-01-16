@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class HomeComponentWidget extends StatefulWidget {
   const HomeComponentWidget({Key key}) : super(key: key);
@@ -12,6 +13,18 @@ class HomeComponentWidget extends StatefulWidget {
 }
 
 class _HomeComponentWidgetState extends State<HomeComponentWidget> {
+  final colorizeColors = [
+    Colors.purple,
+    Colors.blue,
+    Colors.yellow,
+    Colors.red,
+  ];
+
+  final colorizeTextStyle = TextStyle(
+    fontSize: 50.0,
+    fontFamily: 'Horizon',
+  );
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -20,18 +33,19 @@ class _HomeComponentWidgetState extends State<HomeComponentWidget> {
           width: double.infinity,
           height: 320,
           decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/No_way_for_Ambulance.png',
-              ).image,
-            ),
-            gradient: LinearGradient(
-              colors: [Color(0xFF1E2429), Color(0x001E2429)],
-              stops: [0, 1],
-              begin: AlignmentDirectional(0, 1),
-              end: AlignmentDirectional(0, -1),
-            ),
+            color: Color(0xff136fc9),
+            // image: DecorationImage(
+            //   fit: BoxFit.cover,
+            //   image: Image.asset(
+            //     'assets/images/No_way_for_Ambulance.png',
+            //   ).image,
+            // ),
+            // gradient: LinearGradient(
+            //   colors: [Color(0xFF1E2429), Color(0x001E2429)],
+            //   stops: [0, 1],
+            //   begin: AlignmentDirectional(0, 1),
+            //   end: AlignmentDirectional(0, -1),
+            // ),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -57,14 +71,20 @@ class _HomeComponentWidgetState extends State<HomeComponentWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            'Welcome!',
-                            style: FlutterFlowTheme.title1.override(
-                              fontFamily: 'Montserrat',
-                              color: Colors.white,
-                              fontSize: 36,
+                          SizedBox(
+                            width: 250.0,
+                            child: TextLiquidFill(
+                              text: 'Welcome',
+                              waveColor: Colors.white,
+                              loadDuration: Duration(seconds: 6),
+                              boxBackgroundColor: Color(0xFF136fc9),
+                              textStyle: TextStyle(
+                                  fontSize: 40.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                              boxHeight: 65.0,
                             ),
-                          ),
+                          )
                         ],
                       ),
                     ),
@@ -74,13 +94,19 @@ class _HomeComponentWidgetState extends State<HomeComponentWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            'Find your Service in clicks',
-                            style: FlutterFlowTheme.title3.override(
-                              fontFamily: 'Roboto',
-                              color: FlutterFlowTheme.tertiaryColor,
+                          AnimatedTextKit(animatedTexts: [
+                            TypewriterAnimatedText(
+                                'Find your Service In Clicks',
+                                  textStyle: TextStyle(
+                                  fontSize: 15.0,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Canterbury',
+                                  color: Colors.white),
+                                  speed : Duration(milliseconds: 50),
+                                  cursor: '💡'
                             ),
-                          ),
+
+                          ])
                         ],
                       ),
                     ),

@@ -57,9 +57,9 @@ class _Cycle2WidgetState extends State<Cycle2Widget> {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
-                            child: Image.network(
-                              'https://picsum.photos/seed/874/600',
-                            ),
+                            child: Image.asset(
+                                        'assets/images/UI_avatar@2x.jpeg',
+                                      ),
                           ),
                           Expanded(
                             child: Padding(
