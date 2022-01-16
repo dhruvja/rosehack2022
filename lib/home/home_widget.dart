@@ -60,6 +60,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 color: FlutterFlowTheme.tertiaryColor,
                                 boxShadow: [
                                   BoxShadow(
+                                    blurRadius: 5,
                                     color: Color(0xFF0F044C),
                                   )
                                 ],
@@ -126,6 +127,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 color: FlutterFlowTheme.tertiaryColor,
                                 boxShadow: [
                                   BoxShadow(
+                                    blurRadius: 5,
                                     color: Color(0xFF0F044C),
                                   )
                                 ],
@@ -199,6 +201,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 color: FlutterFlowTheme.tertiaryColor,
                                 boxShadow: [
                                   BoxShadow(
+                                    blurRadius: 5,
                                     color: Color(0xFF0F044C),
                                   )
                                 ],
@@ -262,6 +265,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 color: FlutterFlowTheme.tertiaryColor,
                                 boxShadow: [
                                   BoxShadow(
+                                    blurRadius: 5,
                                     color: Color(0xFF0F044C),
                                   )
                                 ],
