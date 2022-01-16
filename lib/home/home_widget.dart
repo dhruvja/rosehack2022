@@ -97,7 +97,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        'Emergrncy',
+                                        'Emergency',
                                         style:
                                             FlutterFlowTheme.bodyText1.override(
                                           fontFamily: 'Lato',
@@ -279,7 +279,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Image.asset(
-                                        'assets/images/No_way_for_Ambulance_(1).png',
+                                        'assets/images/she_needs.jpeg',
                                         width: 80,
                                         height: 80,
                                         fit: BoxFit.contain,
@@ -330,7 +330,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    ScrollWidget(),
+                    Expanded(
+                      child: ScrollWidget(),
+                    ),
                   ],
                 ),
               ),

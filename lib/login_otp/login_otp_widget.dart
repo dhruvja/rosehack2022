@@ -1,8 +1,11 @@
+import 'package:mitra/home/home_widget.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../main.dart';
 
 class LoginOtpWidget extends StatefulWidget {
   const LoginOtpWidget({Key key}) : super(key: key);
@@ -112,8 +115,14 @@ class _LoginOtpWidgetState extends State<LoginOtpWidget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
               child: FFButtonWidget(
-                onPressed: () {
-                  print('Button-Login pressed ...');
+                onPressed: () async {
+                  await Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => NavBarPage(initialPage: 'Home'),
+                    ),
+                    (r) => false,
+                  );
                 },
                 text: 'Sign In with Phone',
                 options: FFButtonOptions(

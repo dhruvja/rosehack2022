@@ -1,3 +1,5 @@
+import 'package:mitra/login_otp/login_otp_widget.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -59,7 +61,7 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 0, 0, 20),
                                       child: Image.asset(
-                                        'assets/images/No_way_for_Ambulance.png',
+                                        'assets/images/No Way For Ambulance.jpeg',
                                         width: 350,
                                         height: 400,
                                         fit: BoxFit.cover,
@@ -171,7 +173,7 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 0, 0, 20),
                                       child: Image.asset(
-                                        'assets/images/No_way_for_Ambulance_(1).png',
+                                        'assets/images/onboard_she_needs.jpeg',
                                         width: 350,
                                         height: 400,
                                         fit: BoxFit.fitWidth,
@@ -340,8 +342,14 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0, 16, 0, 0),
                                         child: FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
+                                          onPressed: () async{
+                                            await Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    LoginOtpWidget(),
+                                              ),
+                                            );
                                           },
                                           text: 'Explore Now',
                                           options: FFButtonOptions(

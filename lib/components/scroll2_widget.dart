@@ -128,7 +128,7 @@ class _Scroll2WidgetState extends State<Scroll2Widget> {
                                     children: [
                                       Expanded(
                                         child: Text(
-                                          'Number of reviews',
+                                          'Total Reviews',
                                           style: FlutterFlowTheme.bodyText2
                                               .override(
                                             fontFamily: 'Lexend Deca',
@@ -141,7 +141,7 @@ class _Scroll2WidgetState extends State<Scroll2Widget> {
                                       Card(
                                         clipBehavior:
                                             Clip.antiAliasWithSaveLayer,
-                                        color: Color(0x4D3BC821),
+                                        color: Colors.purple,
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
@@ -149,7 +149,7 @@ class _Scroll2WidgetState extends State<Scroll2Widget> {
                                           child: Text(
                                             '^ 25%',
                                             style: TextStyle(
-                                              color: Color(0xFF3BC821),
+                                              color: Colors.white,
                                               fontWeight: FontWeight.w500,
                                               fontSize: 10,
                                             ),

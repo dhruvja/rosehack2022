@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
               color: Colors.transparent,
               child: Builder(
                 builder: (context) => Image.asset(
-                  'assets/images/No way for Ambulance.png',
+                  'assets/images/No Way For Ambulance.jpeg',
                   fit: BoxFit.contain,
                 ),
               ),

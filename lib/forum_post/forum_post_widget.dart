@@ -1,9 +1,15 @@
+import 'package:mitra/forum/forum_widget.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../flutter_flow/upload_media.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
+import '../api_endpoint.dart';
 
 class ForumPostWidget extends StatefulWidget {
   const ForumPostWidget({Key key}) : super(key: key);
@@ -18,13 +24,76 @@ class _ForumPostWidgetState extends State<ForumPostWidget> {
   TextEditingController emailAddressController;
   TextEditingController myBioController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  bool present = false;
+  var data;
 
   @override
   void initState() {
     super.initState();
-    emailAddressController = TextEditingController(text: 'Subject');
-    textController1 = TextEditingController(text: 'Name');
-    myBioController = TextEditingController(text: 'Content');
+    emailAddressController = TextEditingController();
+    textController1 = TextEditingController();
+    myBioController = TextEditingController();
+  }
+
+  void post() async {
+    String endpoint = Endpoint();
+    try {
+      var url = endpoint + "api/postforum";
+      print(url);
+      final response = await http.post(Uri.parse(url),
+          headers: <String, String>{
+            'Content-Type': 'application/json; charset=UTF-8',
+            'accept': 'application/json'
+          },
+          body: jsonEncode(<String, String>{
+            "username": textController1.text,
+            "message": myBioController.text,
+            "hashtag": emailAddressController.text,
+          }));
+      if (response.statusCode == 200) {
+        // If the server did return a 201 CREATED response,
+        // then parse the JSON.
+        print(response.body);
+        data = json.decode(response.body);
+        if (data['success']) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+                content: Text('Message Posted to Forum Successfully'),
+                backgroundColor: Colors.green),
+          );
+          await Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ForumWidget(),
+            )
+          );
+          // Timer(Duration(seconds: 1), () async{
+          //   await Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => ForumWidget(),
+          //   ),
+          // );
+          // });
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+                content: Text('Could not fetch data'),
+                backgroundColor: Colors.redAccent),
+          );
+        }
+      }
+      else{
+        print(response.statusCode);
+      }
+    } catch (e) {
+      print(e);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+            content: Text('No Interent Found, try again'),
+            backgroundColor: Colors.redAccent),
+      );
+    }
   }
 
   @override
@@ -59,57 +128,228 @@ class _ForumPostWidgetState extends State<ForumPostWidget> {
       ),
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFDBE2E7),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
-                    child: Container(
-                      width: 90,
-                      height: 90,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                      ),
-                      child: Image.network(
-                        'https://images.unsplash.com/photo-1536164261511-3a17e671d380?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=630&q=80',
-                        fit: BoxFit.fitWidth,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 16),
-              child: Row(
+        child: SingleChildScrollView(
+                  child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  FFButtonWidget(
+                  Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFDBE2E7),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                      child: Container(
+                        width: 90,
+                        height: 90,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: Image.network(
+                          'https://images.unsplash.com/photo-1536164261511-3a17e671d380?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=630&q=80',
+                          fit: BoxFit.fitWidth,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 16),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FFButtonWidget(
+                      onPressed: () async {
+                        print("Pressed");
+                      },
+                      text: 'Change Photo',
+                      options: FFButtonOptions(
+                        width: 130,
+                        height: 40,
+                        color: Colors.white,
+                        textStyle: FlutterFlowTheme.bodyText1.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Color(0xFF050E6A),
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                        ),
+                        elevation: 2,
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                          width: 1,
+                        ),
+                        borderRadius: 8,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
+                child: TextFormField(
+                  controller: textController1,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    labelText: 'Full Name',
+                    labelStyle: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Color(0xFF95A1AC),
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                    ),
+                    hintText: 'Your full name...',
+                    hintStyle: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Color(0xFF95A1AC),
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0xFFDBE2E7),
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0xFFDBE2E7),
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
+                  ),
+                  style: FlutterFlowTheme.bodyText1.override(
+                    fontFamily: 'Lexend Deca',
+                    color: Color(0xFF14181B),
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 12),
+                child: TextFormField(
+                  controller: emailAddressController,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    labelText: 'Subject',
+                    labelStyle: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Color(0xFF95A1AC),
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                    ),
+                    hintText: 'Your email..',
+                    hintStyle: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Color(0xFF95A1AC),
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0xFFDBE2E7),
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0xFFDBE2E7),
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
+                  ),
+                  style: FlutterFlowTheme.bodyText1.override(
+                    fontFamily: 'Lexend Deca',
+                    color: Color(0xFF14181B),
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 12),
+                child: TextFormField(
+                  controller: myBioController,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    labelText: 'Post',
+                    labelStyle: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Color(0xFF95A1AC),
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                    ),
+                    hintText: 'A little about you...',
+                    hintStyle: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Color(0xFF95A1AC),
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0xFFDBE2E7),
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0xFFDBE2E7),
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
+                  ),
+                  style: FlutterFlowTheme.bodyText1.override(
+                    fontFamily: 'Lexend Deca',
+                    color: Color(0xFF14181B),
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal,
+                  ),
+                  textAlign: TextAlign.start,
+                  maxLines: 6,
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(0, 0.05),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+                  child: FFButtonWidget(
                     onPressed: () async {
-                      print("Pressed");
+                      post();
                     },
-                    text: 'Change Photo',
+                    text: 'Save Changes',
                     options: FFButtonOptions(
-                      width: 130,
-                      height: 40,
-                      color: Colors.white,
-                      textStyle: FlutterFlowTheme.bodyText1.override(
+                      width: 340,
+                      height: 60,
+                      color: Color(0xC4050E6A),
+                      textStyle: FlutterFlowTheme.subtitle2.override(
                         fontFamily: 'Lexend Deca',
-                        color: Color(0xFF050E6A),
-                        fontSize: 14,
+                        color: Colors.white,
+                        fontSize: 16,
                         fontWeight: FontWeight.normal,
                       ),
                       elevation: 2,
@@ -120,179 +360,10 @@ class _ForumPostWidgetState extends State<ForumPostWidget> {
                       borderRadius: 8,
                     ),
                   ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
-              child: TextFormField(
-                controller: textController1,
-                obscureText: false,
-                decoration: InputDecoration(
-                  labelText: 'Full Name',
-                  labelStyle: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Color(0xFF95A1AC),
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                  ),
-                  hintText: 'Your full name...',
-                  hintStyle: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Color(0xFF95A1AC),
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0xFFDBE2E7),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0xFFDBE2E7),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  filled: true,
-                  fillColor: Colors.white,
-                  contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
-                ),
-                style: FlutterFlowTheme.bodyText1.override(
-                  fontFamily: 'Lexend Deca',
-                  color: Color(0xFF14181B),
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 12),
-              child: TextFormField(
-                controller: emailAddressController,
-                obscureText: false,
-                decoration: InputDecoration(
-                  labelText: 'Subject',
-                  labelStyle: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Color(0xFF95A1AC),
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                  ),
-                  hintText: 'Your email..',
-                  hintStyle: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Color(0xFF95A1AC),
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0xFFDBE2E7),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0xFFDBE2E7),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  filled: true,
-                  fillColor: Colors.white,
-                  contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
-                ),
-                style: FlutterFlowTheme.bodyText1.override(
-                  fontFamily: 'Lexend Deca',
-                  color: Color(0xFF14181B),
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 12),
-              child: TextFormField(
-                controller: myBioController,
-                obscureText: false,
-                decoration: InputDecoration(
-                  labelText: 'Post',
-                  labelStyle: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Color(0xFF95A1AC),
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                  ),
-                  hintText: 'A little about you...',
-                  hintStyle: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Color(0xFF95A1AC),
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0xFFDBE2E7),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0xFFDBE2E7),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  filled: true,
-                  fillColor: Colors.white,
-                  contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
-                ),
-                style: FlutterFlowTheme.bodyText1.override(
-                  fontFamily: 'Lexend Deca',
-                  color: Color(0xFF14181B),
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
-                ),
-                textAlign: TextAlign.start,
-                maxLines: 6,
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0, 0.05),
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
-                child: FFButtonWidget(
-                  onPressed: () async {
-                    Navigator.pop(context);
-                  },
-                  text: 'Save Changes',
-                  options: FFButtonOptions(
-                    width: 340,
-                    height: 60,
-                    color: Color(0xC4050E6A),
-                    textStyle: FlutterFlowTheme.subtitle2.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                    ),
-                    elevation: 2,
-                    borderSide: BorderSide(
-                      color: Colors.transparent,
-                      width: 1,
-                    ),
-                    borderRadius: 8,
-                  ),
-                ),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

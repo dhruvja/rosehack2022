@@ -3,15 +3,17 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../api_endpoint.dart';
 
-class Forum1Widget extends StatefulWidget {
-  const Forum1Widget({Key key}) : super(key: key);
+class Forum1Widget extends StatelessWidget {
+  var values;
+  String endpoint = Endpoint();
 
-  @override
-  _Forum1WidgetState createState() => _Forum1WidgetState();
-}
+  Forum1Widget(this.values);
 
-class _Forum1WidgetState extends State<Forum1Widget> {
+  void vals() {
+    print(this.values);
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -68,7 +70,7 @@ class _Forum1WidgetState extends State<Forum1Widget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Name',
+                                  values['username'],
                                   style: FlutterFlowTheme.bodyText1,
                                 ),
                               ],
@@ -78,7 +80,7 @@ class _Forum1WidgetState extends State<Forum1Widget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Posted date',
+                                  values['created_time'],
                                   style: FlutterFlowTheme.bodyText1.override(
                                     fontFamily: 'Poppins',
                                     fontSize: 8,
@@ -97,7 +99,7 @@ class _Forum1WidgetState extends State<Forum1Widget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            'Actual Post',
+                            values['message'],
                             style: FlutterFlowTheme.bodyText1,
                           ),
                         ],
@@ -109,7 +111,7 @@ class _Forum1WidgetState extends State<Forum1Widget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            '#tags',
+                            values['hashtag'],
                             style: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'Poppins',
                               fontSize: 10,
@@ -159,7 +161,7 @@ class _Forum1WidgetState extends State<Forum1Widget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0, 0, 5, 0),
                                     child: Text(
-                                      'Read time',
+                                      values['reading_time'] + " mins",
                                       style:
                                           FlutterFlowTheme.bodyText1.override(
                                         fontFamily: 'Poppins',
