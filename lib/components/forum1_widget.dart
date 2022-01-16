@@ -129,7 +129,7 @@ bool _loadingButton = false;
                               decoration: InputDecoration(
                                 hintText: values['message'],
                                 hintStyle: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
+                                  fontFamily: 'Open Sans',
                                   fontSize: 10,
                                 ),
                                 enabledBorder: UnderlineInputBorder(
@@ -155,7 +155,7 @@ bool _loadingButton = false;
                                 filled: true,
                               ),
                               style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Poppins',
+                                fontFamily: 'Open Sans',
                                 fontSize: 10,
                               ),
                               maxLines: 3,

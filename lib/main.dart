@@ -7,12 +7,14 @@ import 'auth/firebase_user_provider.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:mitra/landing_page/landing_page_widget.dart';
 import 'package:mitra/home/home_widget.dart';
+import 'client_sa/client_sa_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import './map2/map2_widget.dart';
 import './home_page/home_page_widget.dart';
 import './car_parking/car_parking_widget.dart';
 import './she_needs/she_needs_widget.dart';
 import 'forum/forum_widget.dart';
+import 'cycle/cycle_widget.dart';
 
 
 void main() async {
@@ -94,6 +96,8 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'Home': HomeWidget(),
       'forum': ForumWidget(),
+      'cycle': CycleWidget(),
+      'activities': ClientSaWidget()
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
     return Scaffold(
@@ -122,6 +126,22 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24,
             ),
             label: 'Home',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.circle,
+              size: 24,
+            ),
+            label: 'Cycle',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.stream,
+              size: 24,
+            ),
+            label: 'activities',
             tooltip: '',
           )
         ],

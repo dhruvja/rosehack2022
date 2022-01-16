@@ -6,6 +6,7 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import '../home_page/home_page_widget.dart';
 import '../login/login_widget.dart';
 import '../forum_post/forum_post_widget.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -123,7 +124,8 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                               context,
                                               MaterialPageRoute(
                                                 builder: (context) =>
-                                                    ForumPostWidget(),
+                                                    NavBarPage(
+                                                        initialPage: 'cycle'),
                                               ),
                                             );
                                           },

@@ -66,7 +66,7 @@ class _Cycle2WidgetState extends State<Cycle2Widget> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(5, 4, 16, 0),
                               child: Text(
-                                'Hello Jimmy',
+                                'Hello Amy',
                                 style: FlutterFlowTheme.title1,
                               ),
                             ),

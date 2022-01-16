@@ -1,19 +1,19 @@
-import '../components/cycle_track_widget.dart';
+import '../components/cycle_track_green_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MenstrualFlowWidget extends StatefulWidget {
-  const MenstrualFlowWidget({Key key}) : super(key: key);
+class MenstrualFlowGreenWidget extends StatefulWidget {
+  const MenstrualFlowGreenWidget({Key key}) : super(key: key);
 
   @override
-  _MenstrualFlowWidgetState createState() => _MenstrualFlowWidgetState();
+  _MenstrualFlowGreenWidgetState createState() =>
+      _MenstrualFlowGreenWidgetState();
 }
 
-class _MenstrualFlowWidgetState extends State<MenstrualFlowWidget> {
+class _MenstrualFlowGreenWidgetState extends State<MenstrualFlowGreenWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -45,9 +45,9 @@ class _MenstrualFlowWidgetState extends State<MenstrualFlowWidget> {
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              FaIcon(
-                                FontAwesomeIcons.solidDotCircle,
-                                color: Color(0xFFE21A1A),
+                              Icon(
+                                Icons.stop_circle,
+                                color: Color(0xFF77BF18),
                                 size: 24,
                               ),
                               Padding(
@@ -81,7 +81,7 @@ class _MenstrualFlowWidgetState extends State<MenstrualFlowWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                '33 Days Ago',
+                                '72 Days ago',
                                 style: FlutterFlowTheme.bodyText1.override(
                                   fontFamily: 'Poppins',
                                   color: Color(0xA9FEFEFE),
@@ -93,11 +93,11 @@ class _MenstrualFlowWidgetState extends State<MenstrualFlowWidget> {
                             onPressed: () {
                               print('Button pressed ...');
                             },
-                            text: 'Update',
+                            text: 'Trace details',
                             options: FFButtonOptions(
                               width: 130,
                               height: 35,
-                              color: FlutterFlowTheme.primaryColor,
+                              color: Color(0xFF77BF18),
                               textStyle: FlutterFlowTheme.subtitle2.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.white,
@@ -119,7 +119,7 @@ class _MenstrualFlowWidgetState extends State<MenstrualFlowWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                'Jan 2022',
+                                'Nov 2021',
                                 style: FlutterFlowTheme.bodyText1.override(
                                   fontFamily: 'Poppins',
                                   color: FlutterFlowTheme.tertiaryColor,
@@ -136,7 +136,7 @@ class _MenstrualFlowWidgetState extends State<MenstrualFlowWidget> {
                                 decoration: BoxDecoration(
                                   color: Color(0x00EEEEEE),
                                 ),
-                                child: CycleTrackWidget(),
+                                child: CycleTrackGreenWidget(),
                               ),
                             ],
                           ),
