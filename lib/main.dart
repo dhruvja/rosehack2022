@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:mitra/setting/setting_widget.dart';
 import 'auth/firebase_user_provider.dart';
 
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -97,7 +98,8 @@ class _NavBarPageState extends State<NavBarPage> {
       'Home': HomeWidget(),
       'forum': ForumWidget(),
       'cycle': CycleWidget(),
-      'activities': ClientSaWidget()
+      'activities': ClientSaWidget(),
+      'settings': SettingWidget()
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
     return Scaffold(
@@ -142,6 +144,14 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24,
             ),
             label: 'activities',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.stream,
+              size: 24,
+            ),
+            label: 'settings',
             tooltip: '',
           )
         ],
