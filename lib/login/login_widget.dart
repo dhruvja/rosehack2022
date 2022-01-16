@@ -4,6 +4,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../sign_in/sign_in_widget.dart';
 import '../home/home_widget.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -195,32 +196,25 @@ class _LoginWidgetState extends State<LoginWidget> {
                         children: [
                           FFButtonWidget(
                             onPressed: () async {
-                              // final user = await createAccountWithEmail(
-                              //   context,
-                              //   emailTextController.text,
-                              //   passwordTextController.text,
-                              // );
-                              // if (user == null) {
-                              //   return;
-                              // }
-
-                              if(emailTextController.text == "dhruv@iamsizzling.com" ) {
-                                await Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => HomeWidget(),
-                                  ),
-                                  (r) => false,
-                                );
-                              }
-                              else{
-                                final snackBar = SnackBar(content: Text('Wrong username or password'));
-                                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                              final user = await createAccountWithEmail(
+                                context,
+                                emailTextController.text,
+                                passwordTextController.text,
+                              );
+                              if (user == null) {
+                                return;
                               }
 
-                              
+                              await Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      NavBarPage(initialPage: 'Home'),
+                                ),
+                                (r) => false,
+                              );
                             },
-                            text: 'Sign in',
+                            text: 'Sign up',
                             options: FFButtonOptions(
                               width: 125,
                               height: 40,
@@ -243,17 +237,25 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 EdgeInsetsDirectional.fromSTEB(35, 0, 0, 0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                await Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    SignInWidget(),
-                                              ),
-                                            );
+                                final user = await signInWithEmail(
+                                  context,
+                                  emailTextController.text,
+                                  passwordTextController.text,
+                                );
+                                if (user == null) {
+                                  return;
+                                }
 
-                                
+                                await Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        NavBarPage(initialPage: 'Home'),
+                                  ),
+                                  (r) => false,
+                                );
                               },
-                              text: 'Sign Up',
+                              text: 'Sign in',
                               options: FFButtonOptions(
                                 width: 125,
                                 height: 40,

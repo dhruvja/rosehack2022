@@ -50,7 +50,7 @@ class _ResultWidgetState extends State<ResultWidget> {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                       child: Image.asset(
-                        'assets/images/9hsjc_2.png',
+                        'assets/images/5p7o2_+.png',
                         width: 100,
                         height: 100,
                         fit: BoxFit.cover,

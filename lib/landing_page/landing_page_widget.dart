@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../home_page/home_page_widget.dart';
 import '../login/login_widget.dart';
+import '../forum_post/forum_post_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -58,7 +59,7 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 0, 0, 20),
                                       child: Image.asset(
-                                        'assets/images/No way for Ambulance.png',
+                                        'assets/images/No_way_for_Ambulance.png',
                                         width: 350,
                                         height: 400,
                                         fit: BoxFit.cover,
@@ -120,7 +121,7 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                               context,
                                               MaterialPageRoute(
                                                 builder: (context) =>
-                                                    HomePageWidget(),
+                                                    ForumPostWidget(),
                                               ),
                                             );
                                           },
@@ -170,7 +171,7 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 0, 0, 20),
                                       child: Image.asset(
-                                        'assets/images/No way for Ambulance (1).png',
+                                        'assets/images/No_way_for_Ambulance_(1).png',
                                         width: 350,
                                         height: 400,
                                         fit: BoxFit.fitWidth,
@@ -232,7 +233,7 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                               context,
                                               MaterialPageRoute(
                                                 builder: (context) =>
-                                                    LoginWidget(),
+                                                    LandingPageWidget(),
                                               ),
                                             );
                                           },
@@ -339,15 +340,8 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0, 16, 0, 0),
                                         child: FFButtonWidget(
-                                          onPressed: () async{
+                                          onPressed: () {
                                             print('Button pressed ...');
-                                            await Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    LoginWidget(),
-                                              ),
-                                            );
                                           },
                                           text: 'Explore Now',
                                           options: FFButtonOptions(

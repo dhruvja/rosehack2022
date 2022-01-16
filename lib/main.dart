@@ -12,6 +12,7 @@ import './map2/map2_widget.dart';
 import './home_page/home_page_widget.dart';
 import './car_parking/car_parking_widget.dart';
 import './she_needs/she_needs_widget.dart';
+import 'forum/forum_widget.dart';
 
 
 void main() async {
@@ -65,6 +66,66 @@ class _MyAppState extends State<MyApp> {
           : currentUser.loggedIn
               ? HomeWidget()
               : LandingPageWidget(),
+    );
+  }
+}
+
+class NavBarPage extends StatefulWidget {
+  NavBarPage({Key key, this.initialPage}) : super(key: key);
+
+  final String initialPage;
+
+  @override
+  _NavBarPageState createState() => _NavBarPageState();
+}
+
+/// This is the private State class that goes with NavBarPage.
+class _NavBarPageState extends State<NavBarPage> {
+  String _currentPage = 'Home';
+
+  @override
+  void initState() {
+    super.initState();
+    _currentPage = widget.initialPage ?? _currentPage;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final tabs = {
+      'Home': HomeWidget(),
+      'forum': ForumWidget(),
+    };
+    final currentIndex = tabs.keys.toList().indexOf(_currentPage);
+    return Scaffold(
+      body: tabs[_currentPage],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: (i) => setState(() => _currentPage = tabs.keys.toList()[i]),
+        backgroundColor: Colors.white,
+        selectedItemColor: FlutterFlowTheme.primaryColor,
+        unselectedItemColor: Color(0x8A000000),
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        type: BottomNavigationBarType.fixed,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home_outlined,
+              size: 24,
+            ),
+            label: 'Home',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.forum_sharp,
+              size: 24,
+            ),
+            label: 'Home',
+            tooltip: '',
+          )
+        ],
+      ),
     );
   }
 }

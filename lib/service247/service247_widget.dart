@@ -13,6 +13,8 @@ import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart' show Date, DateFormat;
 import 'dart:async';
 import 'dart:io';
+import '../ambulance/ambulance_widget.dart';
+import '../main.dart';
 
 class Service247Widget extends StatefulWidget {
   const Service247Widget({Key key}) : super(key: key);
@@ -62,7 +64,6 @@ class _Service247WidgetState extends State<Service247Widget> {
       key: scaffoldKey,
       resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xFFEFEFEF),
-      
       body: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -120,155 +121,341 @@ class _Service247WidgetState extends State<Service247Widget> {
                 ),
               ],
             ),
-            if(present)
-              Expanded(
-                child: Stack(
-                  children: [
-                    Align(
-                      alignment: AlignmentDirectional(0, 0.12),
-                      child: Container(
-                        width: 400,
-                        height: MediaQuery.of(context).size.height * 1,
-                        decoration: BoxDecoration(),
-                        child: FlutterFlowGoogleMap(
-                          controller: googleMapsController,
-                          onCameraIdle: (latLng) => {
-                              print(latLng),
-                              setState(() => googleMapsCenter = latLng)
-                          },
-                          initialLocation: googleMapsCenter,
-                          markerColor: GoogleMarkerColor.violet,
-                          mapType: MapType.normal,
-                          style: GoogleMapStyle.standard,
-                          initialZoom: 14,
-                          allowInteraction: true,
-                          allowZoom: true,
-                          showZoomControls: true,
-                          showLocation: true,
-                          showCompass: false,
-                          showMapToolbar: true,
-                          showTraffic: false,
-                          centerMapOnMarkerTap: true,
-                        ),
+            Expanded(
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: AlignmentDirectional(0, 0.12),
+                    child: Container(
+                      width: 400,
+                      height: MediaQuery.of(context).size.height * 1,
+                      decoration: BoxDecoration(),
+                      child: FlutterFlowGoogleMap(
+                        controller: googleMapsController,
+                        onCameraIdle: (latLng) =>
+                            setState(() => googleMapsCenter = latLng),
+                        initialLocation: googleMapsCenter ??=
+                            LatLng(13.106061, -59.613158),
+                        markerColor: GoogleMarkerColor.violet,
+                        mapType: MapType.normal,
+                        style: GoogleMapStyle.standard,
+                        initialZoom: 14,
+                        allowInteraction: true,
+                        allowZoom: true,
+                        showZoomControls: true,
+                        showLocation: true,
+                        showCompass: true,
+                        showMapToolbar: true,
+                        showTraffic: true,
+                        centerMapOnMarkerTap: true,
                       ),
                     ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
-                          child: Material(
-                            color: Colors.transparent,
-                            elevation: 0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width * 0.95,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 2,
-                                    color: Color(0x4E000000),
-                                    offset: Offset(0, 4),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(8),
-                                border: Border.all(
-                                  color: Color(0xFFEEEEEE),
-                                  width: 2,
-                                ),
-                              ),
-                              child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          4, 0, 4, 0),
-                                      child: Icon(
-                                        Icons.search_rounded,
-                                        color: Color(0xFF95A1AC),
-                                        size: 24,
-                                      ),
+                  ),
+                ],
+              ),
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Expanded(
+                  child: Align(
+                    alignment: AlignmentDirectional(0, 0),
+                    child: TextFormField(
+                      controller: textController,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        hintText: 'Search',
+                        hintStyle: FlutterFlowTheme.bodyText1,
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 10,
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 10,
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        filled: true,
+                        fillColor: FlutterFlowTheme.tertiaryColor,
+                        contentPadding:
+                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                        prefixIcon: Icon(
+                          Icons.search,
+                        ),
+                      ),
+                      style: FlutterFlowTheme.bodyText1,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(
+                    width: 580,
+                    height: 120,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFFEFEFE),
+                    ),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          SingleChildScrollView(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10, 10, 10, 10),
+                                  child: Container(
+                                    width: 120,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFF52B1EF),
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
-                                    Expanded(
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            4, 0, 0, 0),
-                                        child: TextFormField(
-                                          controller: textController,
-                                          obscureText: false,
-                                          decoration: InputDecoration(
-                                            labelText: widget.searchText,
-                                            labelStyle: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'Lexend Deca',
-                                              color: Color(0xFF95A1AC),
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.normal,
-                                            ),
-                                            enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0x00000000),
-                                                width: 1,
-                                              ),
-                                              borderRadius:
-                                                  const BorderRadius.only(
-                                                topLeft: Radius.circular(4.0),
-                                                topRight: Radius.circular(4.0),
-                                              ),
-                                            ),
-                                            focusedBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0x00000000),
-                                                width: 1,
-                                              ),
-                                              borderRadius:
-                                                  const BorderRadius.only(
-                                                topLeft: Radius.circular(4.0),
-                                                topRight: Radius.circular(4.0),
-                                              ),
-                                            ),
+                                    child: InkWell(
+                                      onTap: () async {
+                                        await Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                NavBarPage(initialPage: 'Home'),
                                           ),
-                                          style:
-                                              FlutterFlowTheme.bodyText1.override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: Color(0xFF95A1AC),
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.normal,
+                                        );
+                                      },
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                Icons.plumbing,
+                                                color: FlutterFlowTheme
+                                                    .tertiaryColor,
+                                                size: 40,
+                                              ),
+                                            ],
                                           ),
-                                        ),
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                'Plumber',
+                                                style:
+                                                    FlutterFlowTheme.bodyText1,
+                                              ),
+                                            ],
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                    Expanded(
-                                      child: Align(
-                                        alignment: AlignmentDirectional(0.95, 0),
-                                        child: Icon(
-                                          Icons.tune_rounded,
-                                          color: Color(0xFF95A1AC),
-                                          size: 24,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                                  ),
                                 ),
-                              ),
+                              ],
                             ),
                           ),
-                        ),
-                      ],
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10, 10, 10, 10),
+                                child: Container(
+                                  width: 120,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                    color: Color(0x72FF0000),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: InkWell(
+                                    onTap: () async {
+                                      await Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              NavBarPage(initialPage: 'Home'),
+                                        ),
+                                      );
+                                    },
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                              Icons.electrical_services_rounded,
+                                              color: FlutterFlowTheme
+                                                  .tertiaryColor,
+                                              size: 40,
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              'Electrician',
+                                              style: FlutterFlowTheme.bodyText1,
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10, 10, 10, 10),
+                                child: Container(
+                                  width: 120,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFF61A7F8),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: InkWell(
+                                    onTap: () async {
+                                      await Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              AmbulanceWidget(),
+                                        ),
+                                      );
+                                    },
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                              Icons.nature,
+                                              color: FlutterFlowTheme
+                                                  .tertiaryColor,
+                                              size: 40,
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              'Nurse',
+                                              style: FlutterFlowTheme.bodyText1,
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10, 10, 10, 10),
+                                child: Container(
+                                  width: 120,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFE9ACE9),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: InkWell(
+                                    onTap: () async {
+                                      await Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              NavBarPage(initialPage: 'Home'),
+                                        ),
+                                      );
+                                    },
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                              Icons.animation,
+                                              color: FlutterFlowTheme
+                                                  .tertiaryColor,
+                                              size: 40,
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              'Carpenting',
+                                              style: FlutterFlowTheme.bodyText1,
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            if(present)
-              Search24Widget(),
+            ),
           ],
         ),
       ),
