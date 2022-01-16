@@ -1,5 +1,7 @@
+import '../components/completedtask_widget.dart';
 import '../components/cycle2_widget.dart';
 import '../components/cycles2_widget.dart';
+import '../components/pendingtask_widget.dart';
 import '../flutter_flow/flutter_flow_calendar.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -31,6 +33,18 @@ class _CycleWidgetState extends State<CycleWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.tertiaryColor,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          print('FloatingActionButton pressed ...');
+        },
+        backgroundColor: FlutterFlowTheme.primaryColor,
+        elevation: 8,
+        child: Icon(
+          Icons.add,
+          color: FlutterFlowTheme.tertiaryColor,
+          size: 28,
+        ),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -93,12 +107,54 @@ class _CycleWidgetState extends State<CycleWidget> {
                   ),
                 ],
               ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Text(
+                      'Cycle',
+                      style: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        color: FlutterFlowTheme.primaryColor,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Cycles2Widget(),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Text(
+                      'Task',
+                      style: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        color: FlutterFlowTheme.primaryColor,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    PendingtaskWidget(),
+                    CompletedtaskWidget(),
                   ],
                 ),
               ),
