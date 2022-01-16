@@ -12,6 +12,8 @@ import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart' show Date, DateFormat;
 import 'dart:async';
 import 'dart:io';
+import 'dart:convert';
+import '../api_endpoint.dart';
 
 class SheNeeds1Widget extends StatefulWidget {
   const SheNeeds1Widget({Key key}) : super(key: key);
@@ -29,6 +31,52 @@ class _SheNeeds1WidgetState extends State<SheNeeds1Widget> {
   bool _play = false;
   bool _recordStatus = false;
   String _recordName = "Record";
+  String endpoint;
+  bool present = false;
+  String latitude;
+  String longitude;
+
+  void sendSms() async{
+    try {
+      String url = endpoint + "api/sendsms";
+      final response = await http.post(Uri.parse(url),
+          headers: <String, String>{
+            'Content-Type': 'application/json; charset=UTF-8',
+            'accept': 'application/json'
+          },
+          body: jsonEncode(<String, String>{
+            "lat": latitude,
+            "long": longitude
+          }));
+      if (response.statusCode == 200) {
+        // print(response.body);
+        var data = json.decode(response.body);
+        print(data);
+        setState(() {
+          present = true;
+        });
+        if(data['success'])
+            ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+                content: Text('Protectors are notified Successfully'),
+                backgroundColor: Colors.green),
+            );
+        else
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+                content: Text('Protectors could not be notified'),
+                backgroundColor: Colors.redAccent),
+            );
+      }
+    } catch (e) {
+      print(e);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+            content: Text('No Interent Found, try again'),
+            backgroundColor: Colors.redAccent),
+      );
+    }
+  }
 
   void startIt() async {
     filepath = "/Users/Deepak/Documents";
@@ -124,7 +172,7 @@ class _SheNeeds1WidgetState extends State<SheNeeds1Widget> {
 
   void uploadAudio() async {
     var filePath = await getFilePath();
-    const url = "http://192.168.0.192:5000/api/uploadAudio";
+    var url = endpoint + "api/uploadAudio";
     var request = http.MultipartRequest('POST', Uri.parse(url));
     request.files.add(http.MultipartFile('audio',
         File(filePath).readAsBytes().asStream(), File(filepath).lengthSync(),
@@ -149,6 +197,9 @@ class _SheNeeds1WidgetState extends State<SheNeeds1Widget> {
         _location_message = currentPosition.latitude.toString() +
             ", " +
             currentPosition.longitude.toString();
+          latitude = currentPosition.latitude.toString();
+          longitude = currentPosition.longitude.toString();
+
       });
     }
     print(file);
@@ -159,6 +210,7 @@ class _SheNeeds1WidgetState extends State<SheNeeds1Widget> {
     startIt();
     getLocation();
     super.initState();
+    endpoint = Endpoint();
   }
 
   @override
@@ -208,7 +260,7 @@ class _SheNeeds1WidgetState extends State<SheNeeds1Widget> {
             padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
             child: FFButtonWidget(
               onPressed: () {
-                print('Button pressed ...');
+                sendSms();
               },
               text: 'Notify my PROTECTORS',
               icon: Icon(
