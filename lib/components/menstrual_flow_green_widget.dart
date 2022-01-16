@@ -30,6 +30,7 @@ class _MenstrualFlowGreenWidgetState extends State<MenstrualFlowGreenWidget> {
                 height: 150,
                 decoration: BoxDecoration(
                   color: Color(0xFF050E6A),
+                  borderRadius: BorderRadius.circular(20),
                 ),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
