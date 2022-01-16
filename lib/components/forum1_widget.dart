@@ -111,7 +111,7 @@ class _Forum1WidgetState extends State<Forum1Widget> {
                               decoration: InputDecoration(
                                 hintText: 'Post',
                                 hintStyle: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
+                                  fontFamily: 'Open Sans',
                                   fontSize: 10,
                                 ),
                                 enabledBorder: UnderlineInputBorder(
@@ -137,7 +137,7 @@ class _Forum1WidgetState extends State<Forum1Widget> {
                                 filled: true,
                               ),
                               style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Poppins',
+                                fontFamily: 'Open Sans',
                                 fontSize: 10,
                               ),
                               maxLines: 3,
