@@ -273,7 +273,11 @@ class _SettingWidgetState extends State<SettingWidget> {
                           Expanded(
                             child: Align(
                               alignment: AlignmentDirectional(0.9, 0),
-                              child: widget.listIcon,
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                color: Color(0xFF95A1AC),
+                                size: 18,
+                              ),
                             ),
                           ),
                         ],
@@ -301,7 +305,11 @@ class _SettingWidgetState extends State<SettingWidget> {
                           Padding(
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                            child: widget.leftIcon,
+                            child: Icon(
+                              Icons.settings_rounded,
+                              color: Color(0xFF4B39EF),
+                              size: 24,
+                            ),
                           ),
                           Padding(
                             padding:
@@ -319,7 +327,11 @@ class _SettingWidgetState extends State<SettingWidget> {
                           Expanded(
                             child: Align(
                               alignment: AlignmentDirectional(0.9, 0),
-                              child: widget.listIcon,
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                color: Color(0xFF95A1AC),
+                                size: 18,
+                              ),
                             ),
                           ),
                         ],
@@ -347,7 +359,11 @@ class _SettingWidgetState extends State<SettingWidget> {
                           Padding(
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                            child: widget.leftIcon,
+                            child: FaIcon(
+                              FontAwesomeIcons.bell,
+                              color: Color(0xFF4B39EF),
+                              size: 24,
+                            ),
                           ),
                           Padding(
                             padding:
@@ -365,7 +381,11 @@ class _SettingWidgetState extends State<SettingWidget> {
                           Expanded(
                             child: Align(
                               alignment: AlignmentDirectional(0.9, 0),
-                              child: widget.listIcon,
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                color: Color(0xFF95A1AC),
+                                size: 18,
+                              ),
                             ),
                           ),
                         ],
@@ -393,7 +413,11 @@ class _SettingWidgetState extends State<SettingWidget> {
                           Padding(
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                            child: widget.leftIcon,
+                            child: Icon(
+                              Icons.text_snippet,
+                              color: Color(0xFF4B39EF),
+                              size: 24,
+                            ),
                           ),
                           Padding(
                             padding:
@@ -411,7 +435,11 @@ class _SettingWidgetState extends State<SettingWidget> {
                           Expanded(
                             child: Align(
                               alignment: AlignmentDirectional(0.9, 0),
-                              child: widget.listIcon,
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                color: Color(0xFF95A1AC),
+                                size: 18,
+                              ),
                             ),
                           ),
                         ],
