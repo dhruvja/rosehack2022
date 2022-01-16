@@ -17,7 +17,7 @@ class _Cycles2WidgetState extends State<Cycles2Widget> {
   Widget build(BuildContext context) {
     return Container(
       width: 700,
-      height: 190,
+      height: 170,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.tertiaryColor,
       ),
@@ -27,29 +27,23 @@ class _Cycles2WidgetState extends State<Cycles2Widget> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 10, 10, 10),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: MenstrualFlowWidget(),
-                  ),
-                ],
-              ),
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: MenstrualFlowWidget(),
+                ),
+              ],
             ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 10, 10, 10),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: MenstrualFlowGreenWidget(),
-                  ),
-                ],
-              ),
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: MenstrualFlowGreenWidget(),
+                ),
+              ],
             ),
           ],
         ),

@@ -56,6 +56,7 @@ bool _loadingButton = false;
                 height: 200,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.tertiaryColor,
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
