@@ -32,76 +32,82 @@ class _CycleWidgetState extends State<CycleWidget> {
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
       body: SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Cycle2Widget(),
-              ],
-            ),
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.95,
-                    height: 400,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFEEEEEE),
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: Image.asset(
-                          'assets/images/No_way_for_Ambulance.png',
-                        ).image,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Cycle2Widget(),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.95,
+                      height: 400,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFEEEEEE),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: Image.asset(
+                            'assets/images/No_way_for_Ambulance.png',
+                          ).image,
+                        ),
+                        borderRadius: BorderRadius.circular(0),
                       ),
-                      borderRadius: BorderRadius.circular(0),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 30),
-                      child: FlutterFlowCalendar(
-                        color: FlutterFlowTheme.tertiaryColor,
-                        iconColor: Color(0xFFFEFEFE),
-                        weekFormat: false,
-                        weekStartsMonday: false,
-                        onChange: (DateTimeRange newSelectedDate) {
-                          setState(() => calendarSelectedDay = newSelectedDate);
-                        },
-                        titleStyle: TextStyle(
-                          color: Color(0xFFFEFEFE),
-                        ),
-                        dayOfWeekStyle: TextStyle(
-                          color: Color(0xFF52B1EF),
-                        ),
-                        dateStyle: TextStyle(
-                          color: Color(0xFFFEFEFE),
-                          fontWeight: FontWeight.w500,
-                        ),
-                        selectedDateStyle: TextStyle(
-                          color: Color(0xC4050E6A),
-                          fontWeight: FontWeight.bold,
-                          fontStyle: FontStyle.normal,
-                        ),
-                        inactiveDateStyle: FlutterFlowTheme.subtitle1.override(
-                          fontFamily: 'Poppins',
-                          color: Color(0xFF77BF18),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 30),
+                        child: FlutterFlowCalendar(
+                          color: FlutterFlowTheme.tertiaryColor,
+                          iconColor: Color(0xFFFEFEFE),
+                          weekFormat: false,
+                          weekStartsMonday: false,
+                          onChange: (DateTimeRange newSelectedDate) {
+                            setState(
+                                () => calendarSelectedDay = newSelectedDate);
+                          },
+                          titleStyle: TextStyle(
+                            color: Color(0xFFFEFEFE),
+                          ),
+                          dayOfWeekStyle: TextStyle(
+                            color: Color(0xFF52B1EF),
+                          ),
+                          dateStyle: TextStyle(
+                            color: Color(0xFFFEFEFE),
+                            fontWeight: FontWeight.w500,
+                          ),
+                          selectedDateStyle: TextStyle(
+                            color: Color(0xC4050E6A),
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.normal,
+                          ),
+                          inactiveDateStyle:
+                              FlutterFlowTheme.subtitle1.override(
+                            fontFamily: 'Poppins',
+                            color: Color(0xFF77BF18),
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            Expanded(
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 10),
-                child: MenstrualFlowWidget(),
+                ],
               ),
-            ),
-          ],
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: MenstrualFlowWidget(),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
