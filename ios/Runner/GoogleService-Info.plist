@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>612561736235-vnfdi9racq3jth3gtrv69750acpar5qf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.612561736235-vnfdi9racq3jth3gtrv69750acpar5qf</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>612561736235-l7eq7c8fbak5c9h3611o6jp0rajri4d5.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBWflcacBt8mX9Sfjw-5jiEkeqKhj-6gDw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>612561736235</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.flutterflow.mitra</string>
+	<key>PROJECT_ID</key>
+	<string>jobista-notifs</string>
+	<key>STORAGE_BUCKET</key>
+	<string>jobista-notifs.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:612561736235:ios:da2c4ab9b3e02a595c106e</string>
+</dict>
+</plist>
