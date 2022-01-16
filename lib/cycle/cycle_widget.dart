@@ -1,5 +1,5 @@
 import '../components/cycle2_widget.dart';
-import '../components/menstrual_flow_widget.dart';
+import '../components/cycles2_widget.dart';
 import '../flutter_flow/flutter_flow_calendar.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -30,7 +30,7 @@ class _CycleWidgetState extends State<CycleWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: FlutterFlowTheme.tertiaryColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -50,7 +50,7 @@ class _CycleWidgetState extends State<CycleWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.95,
-                      height: 400,
+                      height: 420,
                       decoration: BoxDecoration(
                         color: Color(0xFFEEEEEE),
                         image: DecorationImage(
@@ -61,50 +61,46 @@ class _CycleWidgetState extends State<CycleWidget> {
                         ),
                         borderRadius: BorderRadius.circular(0),
                       ),
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 30),
-                        child: FlutterFlowCalendar(
-                          color: FlutterFlowTheme.tertiaryColor,
-                          iconColor: Color(0xFFFEFEFE),
-                          weekFormat: false,
-                          weekStartsMonday: false,
-                          onChange: (DateTimeRange newSelectedDate) {
-                            setState(
-                                () => calendarSelectedDay = newSelectedDate);
-                          },
-                          titleStyle: TextStyle(
-                            color: Color(0xFFFEFEFE),
-                          ),
-                          dayOfWeekStyle: TextStyle(
-                            color: Color(0xFF52B1EF),
-                          ),
-                          dateStyle: TextStyle(
-                            color: Color(0xFFFEFEFE),
-                            fontWeight: FontWeight.w500,
-                          ),
-                          selectedDateStyle: TextStyle(
-                            color: Color(0xC4050E6A),
-                            fontWeight: FontWeight.bold,
-                            fontStyle: FontStyle.normal,
-                          ),
-                          inactiveDateStyle:
-                              FlutterFlowTheme.subtitle1.override(
-                            fontFamily: 'Poppins',
-                            color: Color(0xFF77BF18),
-                          ),
+                      child: FlutterFlowCalendar(
+                        color: FlutterFlowTheme.tertiaryColor,
+                        iconColor: Color(0xFFFEFEFE),
+                        weekFormat: false,
+                        weekStartsMonday: false,
+                        onChange: (DateTimeRange newSelectedDate) {
+                          setState(() => calendarSelectedDay = newSelectedDate);
+                        },
+                        titleStyle: TextStyle(
+                          color: Color(0xFFFEFEFE),
+                        ),
+                        dayOfWeekStyle: TextStyle(
+                          color: Color(0xFF52B1EF),
+                        ),
+                        dateStyle: TextStyle(
+                          color: Color(0xFFFEFEFE),
+                          fontWeight: FontWeight.w500,
+                        ),
+                        selectedDateStyle: TextStyle(
+                          color: Color(0xC4050E6A),
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.normal,
+                        ),
+                        inactiveDateStyle: FlutterFlowTheme.subtitle1.override(
+                          fontFamily: 'Poppins',
+                          color: Color(0xFF77BF18),
                         ),
                       ),
                     ),
                   ),
                 ],
               ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Expanded(
-                    child: MenstrualFlowWidget(),
-                  ),
-                ],
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Cycles2Widget(),
+                  ],
+                ),
               ),
             ],
           ),

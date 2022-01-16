@@ -318,11 +318,14 @@ class _HomeWidgetState extends State<HomeWidget> {
                 decoration: BoxDecoration(
                   color: Color(0xFFEEEEEE),
                 ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    ScrollWidget(),
-                  ],
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      ScrollWidget(),
+                    ],
+                  ),
                 ),
               ),
             ],
