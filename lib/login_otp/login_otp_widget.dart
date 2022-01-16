@@ -62,89 +62,91 @@ class _LoginOtpWidgetState extends State<LoginOtpWidget> {
             ).image,
           ),
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
-              child: TextFormField(
-                controller: phoneNumberController,
-                obscureText: false,
-                decoration: InputDecoration(
-                  labelText: 'Your Phone Number',
-                  labelStyle: FlutterFlowTheme.bodyText1.override(
+        child: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
+                child: TextFormField(
+                  controller: phoneNumberController,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    labelText: 'Your Phone Number',
+                    labelStyle: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Color(0x98FFFFFF),
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                    ),
+                    hintText: 'Please enter a valid number...',
+                    hintStyle: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Color(0x98FFFFFF),
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0x00000000),
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0x00000000),
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    filled: true,
+                    fillColor: Color(0xFF3124A1),
+                    contentPadding:
+                        EdgeInsetsDirectional.fromSTEB(20, 24, 20, 24),
+                  ),
+                  style: FlutterFlowTheme.bodyText1.override(
                     fontFamily: 'Lexend Deca',
-                    color: Color(0x98FFFFFF),
+                    color: Colors.white,
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
                   ),
-                  hintText: 'Please enter a valid number...',
-                  hintStyle: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Color(0x98FFFFFF),
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0x00000000),
-                      width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0x00000000),
-                      width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  filled: true,
-                  fillColor: Color(0xFF3124A1),
-                  contentPadding:
-                      EdgeInsetsDirectional.fromSTEB(20, 24, 20, 24),
-                ),
-                style: FlutterFlowTheme.bodyText1.override(
-                  fontFamily: 'Lexend Deca',
-                  color: Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
-              child: FFButtonWidget(
-                onPressed: () async {
-                  await Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => NavBarPage(initialPage: 'Home'),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+                child: FFButtonWidget(
+                  onPressed: () async {
+                    await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => NavBarPage(initialPage: 'Home'),
+                        ));
+                  },
+                  text: 'Sign In with Phone',
+                  options: FFButtonOptions(
+                    width: 230,
+                    height: 60,
+                    color: Colors.white,
+                    textStyle: FlutterFlowTheme.subtitle2.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Color(0xFF4B39EF),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
                     ),
-                    (r) => false,
-                  );
-                },
-                text: 'Sign In with Phone',
-                options: FFButtonOptions(
-                  width: 230,
-                  height: 60,
-                  color: Colors.white,
-                  textStyle: FlutterFlowTheme.subtitle2.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Color(0xFF4B39EF),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
+                    elevation: 3,
+                    borderSide: BorderSide(
+                      color: Colors.transparent,
+                      width: 1,
+                    ),
+                    borderRadius: 8,
                   ),
-                  elevation: 3,
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1,
-                  ),
-                  borderRadius: 8,
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
