@@ -60,8 +60,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 color: FlutterFlowTheme.tertiaryColor,
                                 boxShadow: [
                                   BoxShadow(
-                                    blurRadius: 5,
-                                    color: Color(0xFF0F044C),
+                                    blurRadius: 3,
+                                    color: Color(0xFF52B1EF),
                                   )
                                 ],
                                 borderRadius: BorderRadius.circular(10),
@@ -127,8 +127,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 color: FlutterFlowTheme.tertiaryColor,
                                 boxShadow: [
                                   BoxShadow(
-                                    blurRadius: 5,
-                                    color: Color(0xFF0F044C),
+                                    blurRadius: 3,
+                                    color: Color(0xFF52B1EF),
                                   )
                                 ],
                                 borderRadius: BorderRadius.circular(10),
@@ -201,8 +201,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 color: FlutterFlowTheme.tertiaryColor,
                                 boxShadow: [
                                   BoxShadow(
-                                    blurRadius: 5,
-                                    color: Color(0xFF0F044C),
+                                    blurRadius: 3,
+                                    color: Color(0xFF52B1EF),
                                   )
                                 ],
                                 borderRadius: BorderRadius.circular(10),
@@ -265,8 +265,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 color: FlutterFlowTheme.tertiaryColor,
                                 boxShadow: [
                                   BoxShadow(
-                                    blurRadius: 5,
-                                    color: Color(0xFF0F044C),
+                                    blurRadius: 3,
+                                    color: Color(0xFF52B1EF),
                                   )
                                 ],
                                 borderRadius: BorderRadius.circular(10),
