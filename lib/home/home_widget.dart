@@ -4,6 +4,7 @@ import '../components/home_component_widget.dart';
 import '../components/scroll_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../service247/service247_widget.dart';
 import '../she_needs/she_needs_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -103,58 +104,68 @@ class _HomeWidgetState extends State<HomeWidget> {
                         ),
                       ],
                     ),
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-                          child: Container(
-                            width: 140,
-                            height: 120,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.tertiaryColor,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Color(0xFF0F044C),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(
-                                color: Color(0x00010524),
+                    InkWell(
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Service247Widget(),
+                          ),
+                        );
+                      },
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                            child: Container(
+                              width: 140,
+                              height: 120,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.tertiaryColor,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Color(0xFF0F044C),
+                                  )
+                                ],
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(
+                                  color: Color(0x00010524),
+                                ),
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/9hsjc_2.png',
+                                        width: 80,
+                                        height: 80,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        '24/7 Services',
+                                        style: FlutterFlowTheme.bodyText1,
+                                      ),
+                                    ],
+                                  ),
+                                ],
                               ),
                             ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/9hsjc_2.png',
-                                      width: 80,
-                                      height: 80,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      '24/7 Services',
-                                      style: FlutterFlowTheme.bodyText1,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ],
                 ),
