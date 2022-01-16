@@ -4,6 +4,8 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../main.dart';
+
 class HomeActivityWidget extends StatefulWidget {
   const HomeActivityWidget({Key key}) : super(key: key);
 
@@ -79,8 +81,12 @@ class _HomeActivityWidgetState extends State<HomeActivityWidget> {
               ],
             ),
             FFButtonWidget(
-              onPressed: () {
-                print('chatGuest pressed ...');
+              onPressed: () async{
+                await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => NavBarPage(initialPage: 'cycle'),
+                        ));
               },
               text: 'View',
               options: FFButtonOptions(

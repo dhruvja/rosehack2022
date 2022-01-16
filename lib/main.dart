@@ -148,7 +148,7 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.stream,
+              Icons.settings,
               size: 24,
             ),
             label: 'settings',
