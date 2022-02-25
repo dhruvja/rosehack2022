@@ -47,13 +47,17 @@ class _Search1WidgetState extends State<Search1Widget> {
                               setState(() => dropDownValue1 = val),
                           width: 150,
                           height: 50,
-                          textStyle: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                            color: FlutterFlowTheme.tertiaryColor,
-                          ),
+                          textStyle: FlutterFlowTheme.of(context)
+                              .bodyText1
+                              .override(
+                                fontFamily: 'Poppins',
+                                color:
+                                    FlutterFlowTheme.of(context).tertiaryColor,
+                              ),
                           fillColor: Color(0x00FFFFFF),
                           elevation: 2,
-                          borderColor: FlutterFlowTheme.tertiaryColor,
+                          borderColor:
+                              FlutterFlowTheme.of(context).tertiaryColor,
                           borderWidth: 0,
                           borderRadius: 0,
                           margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
@@ -79,13 +83,17 @@ class _Search1WidgetState extends State<Search1Widget> {
                               setState(() => dropDownValue2 = val),
                           width: 150,
                           height: 50,
-                          textStyle: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                            color: FlutterFlowTheme.tertiaryColor,
-                          ),
+                          textStyle: FlutterFlowTheme.of(context)
+                              .bodyText1
+                              .override(
+                                fontFamily: 'Poppins',
+                                color:
+                                    FlutterFlowTheme.of(context).tertiaryColor,
+                              ),
                           fillColor: Color(0x00FFFFFF),
                           elevation: 2,
-                          borderColor: FlutterFlowTheme.tertiaryColor,
+                          borderColor:
+                              FlutterFlowTheme.of(context).tertiaryColor,
                           borderWidth: 0,
                           borderRadius: 0,
                           margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
@@ -110,11 +118,11 @@ class _Search1WidgetState extends State<Search1Widget> {
             options: FFButtonOptions(
               width: 300,
               height: 40,
-              color: FlutterFlowTheme.primaryColor,
-              textStyle: FlutterFlowTheme.subtitle2.override(
-                fontFamily: 'Poppins',
-                color: Colors.white,
-              ),
+              color: FlutterFlowTheme.of(context).primaryColor,
+              textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                    fontFamily: 'Poppins',
+                    color: Colors.white,
+                  ),
               borderSide: BorderSide(
                 color: Colors.transparent,
                 width: 1,
@@ -136,11 +144,11 @@ class _Search1WidgetState extends State<Search1Widget> {
               options: FFButtonOptions(
                 width: 300,
                 height: 40,
-                color: FlutterFlowTheme.primaryColor,
-                textStyle: FlutterFlowTheme.subtitle2.override(
-                  fontFamily: 'Poppins',
-                  color: Colors.white,
-                ),
+                color: FlutterFlowTheme.of(context).primaryColor,
+                textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                      fontFamily: 'Poppins',
+                      color: Colors.white,
+                    ),
                 borderSide: BorderSide(
                   color: Colors.transparent,
                   width: 1,

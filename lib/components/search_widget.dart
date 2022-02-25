@@ -53,13 +53,9 @@ class _SearchWidgetState extends State<SearchWidget> {
                         obscureText: false,
                         decoration: InputDecoration(
                           hintText: 'Search ',
-                          hintStyle: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                            color: FlutterFlowTheme.tertiaryColor,
-                          ),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.tertiaryColor,
+                              color: FlutterFlowTheme.of(context).tertiaryColor,
                               width: 1,
                             ),
                             borderRadius: const BorderRadius.only(
@@ -69,7 +65,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                           ),
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.tertiaryColor,
+                              color: FlutterFlowTheme.of(context).tertiaryColor,
                               width: 1,
                             ),
                             borderRadius: const BorderRadius.only(
@@ -78,10 +74,10 @@ class _SearchWidgetState extends State<SearchWidget> {
                             ),
                           ),
                         ),
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          color: FlutterFlowTheme.tertiaryColor,
-                        ),
+                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).tertiaryColor,
+                            ),
                       ),
                     ),
                     FlutterFlowDropDown(
@@ -96,10 +92,12 @@ class _SearchWidgetState extends State<SearchWidget> {
                       onChanged: (val) => setState(() => dropDownValue = val),
                       width: 220,
                       height: 50,
-                      textStyle: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                        color: FlutterFlowTheme.tertiaryColor,
-                      ),
+                      textStyle: FlutterFlowTheme.of(context)
+                          .bodyText1
+                          .override(
+                            fontFamily: 'Poppins',
+                            color: FlutterFlowTheme.of(context).tertiaryColor,
+                          ),
                       fillColor: Color(0x00FFFFFF),
                       elevation: 2,
                       borderColor: Color(0x00FFFFFF),
@@ -122,12 +120,13 @@ class _SearchWidgetState extends State<SearchWidget> {
                           width: 300,
                           height: 40,
                           color: Color(0x003474E0),
-                          textStyle: FlutterFlowTheme.subtitle2.override(
-                            fontFamily: 'Poppins',
-                            color: Colors.white,
-                          ),
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
                           borderSide: BorderSide(
-                            color: FlutterFlowTheme.tertiaryColor,
+                            color: FlutterFlowTheme.of(context).tertiaryColor,
                             width: 1,
                           ),
                           borderRadius: 0,
@@ -142,11 +141,12 @@ class _SearchWidgetState extends State<SearchWidget> {
                       options: FFButtonOptions(
                         width: 130,
                         height: 40,
-                        color: FlutterFlowTheme.primaryColor,
-                        textStyle: FlutterFlowTheme.subtitle2.override(
-                          fontFamily: 'Poppins',
-                          color: Colors.white,
-                        ),
+                        color: FlutterFlowTheme.of(context).primaryColor,
+                        textStyle:
+                            FlutterFlowTheme.of(context).subtitle2.override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.white,
+                                ),
                         borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1,

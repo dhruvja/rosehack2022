@@ -36,7 +36,7 @@ class _ActivityComponentWidgetState extends State<ActivityComponentWidget> {
                   width: 16,
                   height: 16,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.primaryColor,
+                    color: FlutterFlowTheme.of(context).primaryColor,
                     shape: BoxShape.circle,
                   ),
                 ),
@@ -75,12 +75,13 @@ class _ActivityComponentWidgetState extends State<ActivityComponentWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                         child: Text(
                           '14, Sept. 2021',
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF95A1AC),
-                            fontSize: 12,
-                            fontWeight: FontWeight.normal,
-                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyText1.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF95A1AC),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                         ),
                       ),
                       Padding(
@@ -100,24 +101,26 @@ class _ActivityComponentWidgetState extends State<ActivityComponentWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                         child: Text(
                           'New job',
-                          style: FlutterFlowTheme.subtitle2.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF151B1E),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF151B1E),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                         ),
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
                         child: Text(
                           'posted',
-                          style: FlutterFlowTheme.subtitle1.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF4B39EF),
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style:
+                              FlutterFlowTheme.of(context).subtitle1.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF4B39EF),
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                         ),
                       ),
                     ],
@@ -132,12 +135,13 @@ class _ActivityComponentWidgetState extends State<ActivityComponentWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
                           child: Text(
                             'Andrew F.',
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Color(0xFF95A1AC),
-                              fontSize: 12,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF95A1AC),
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                           ),
                         ),
                         Expanded(
@@ -155,11 +159,12 @@ class _ActivityComponentWidgetState extends State<ActivityComponentWidget> {
                                   width: 130,
                                   height: 40,
                                   color: Color(0xFF010524),
-                                  textStyle:
-                                      FlutterFlowTheme.subtitle2.override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.white,
-                                  ),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .subtitle2
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                      ),
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1,

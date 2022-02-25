@@ -46,12 +46,12 @@ class _SheNeedsWidgetState extends State<SheNeedsWidget> {
                         children: [
                           Text(
                             'MITRA',
-                            style: FlutterFlowTheme.title1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Color(0xFF090F13),
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: FlutterFlowTheme.of(context).title1.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: Color(0xFF090F13),
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                ),
                           ),
                         ],
                       ),
@@ -62,12 +62,14 @@ class _SheNeedsWidgetState extends State<SheNeedsWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                             child: Text(
                               'Your survivor on time',
-                              style: FlutterFlowTheme.bodyText2.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0xFF8B97A2),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText2
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF8B97A2),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                             ),
                           ),
                         ],

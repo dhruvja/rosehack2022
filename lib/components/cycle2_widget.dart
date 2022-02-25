@@ -67,7 +67,7 @@ class _Cycle2WidgetState extends State<Cycle2Widget> {
                                   EdgeInsetsDirectional.fromSTEB(5, 4, 16, 0),
                               child: Text(
                                 'Hello Jimmy',
-                                style: FlutterFlowTheme.title1,
+                                style: FlutterFlowTheme.of(context).title1,
                               ),
                             ),
                           ),
@@ -82,7 +82,7 @@ class _Cycle2WidgetState extends State<Cycle2Widget> {
                                   EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                               child: Text(
                                 'I follow dreams with passion and charm!',
-                                style: FlutterFlowTheme.bodyText1,
+                                style: FlutterFlowTheme.of(context).bodyText1,
                               ),
                             ),
                           ),
@@ -103,10 +103,12 @@ class _Cycle2WidgetState extends State<Cycle2Widget> {
                                 width: 150,
                                 height: 50,
                                 color: Color(0xFF57636C),
-                                textStyle: FlutterFlowTheme.subtitle2.override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.white,
-                                ),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                    ),
                                 elevation: 2,
                                 borderSide: BorderSide(
                                   color: Colors.transparent,
@@ -123,11 +125,14 @@ class _Cycle2WidgetState extends State<Cycle2Widget> {
                               options: FFButtonOptions(
                                 width: 150,
                                 height: 50,
-                                color: FlutterFlowTheme.primaryColor,
-                                textStyle: FlutterFlowTheme.subtitle2.override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.white,
-                                ),
+                                color:
+                                    FlutterFlowTheme.of(context).primaryColor,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                    ),
                                 elevation: 2,
                                 borderSide: BorderSide(
                                   color: Colors.transparent,

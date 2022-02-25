@@ -55,11 +55,13 @@ class _MenstrualFlowGreenWidgetState extends State<MenstrualFlowGreenWidget> {
                                     10, 10, 10, 10),
                                 child: Text(
                                   'Cycle Tracking',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: Color(0xFFFEFEFE),
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Color(0xFFFEFEFE),
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                 ),
                               ),
                             ],
@@ -69,11 +71,13 @@ class _MenstrualFlowGreenWidgetState extends State<MenstrualFlowGreenWidget> {
                             children: [
                               Text(
                                 'Menstrual Flow',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                  color: Color(0xFFFEFEFE),
-                                  fontSize: 18,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Color(0xFFFEFEFE),
+                                      fontSize: 18,
+                                    ),
                               ),
                             ],
                           ),
@@ -82,10 +86,12 @@ class _MenstrualFlowGreenWidgetState extends State<MenstrualFlowGreenWidget> {
                             children: [
                               Text(
                                 '72 Days ago',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                  color: Color(0xA9FEFEFE),
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Color(0xA9FEFEFE),
+                                    ),
                               ),
                             ],
                           ),
@@ -98,10 +104,12 @@ class _MenstrualFlowGreenWidgetState extends State<MenstrualFlowGreenWidget> {
                               width: 130,
                               height: 35,
                               color: Color(0xFF77BF18),
-                              textStyle: FlutterFlowTheme.subtitle2.override(
-                                fontFamily: 'Poppins',
-                                color: Colors.white,
-                              ),
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1,
@@ -120,10 +128,13 @@ class _MenstrualFlowGreenWidgetState extends State<MenstrualFlowGreenWidget> {
                             children: [
                               Text(
                                 'Nov 2021',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.tertiaryColor,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .tertiaryColor,
+                                    ),
                               ),
                             ],
                           ),

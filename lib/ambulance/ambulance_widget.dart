@@ -50,12 +50,13 @@ class _AmbulanceWidgetState extends State<AmbulanceWidget> {
                           children: [
                             Text(
                               'MITRA',
-                              style: FlutterFlowTheme.title1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0xFF090F13),
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style:
+                                  FlutterFlowTheme.of(context).title1.override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: Color(0xFF090F13),
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                             ),
                           ],
                         ),
@@ -67,12 +68,14 @@ class _AmbulanceWidgetState extends State<AmbulanceWidget> {
                                   EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                               child: Text(
                                 'Your survivor on time',
-                                style: FlutterFlowTheme.bodyText2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF8B97A2),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText2
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF8B97A2),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                               ),
                             ),
                           ],
@@ -116,7 +119,7 @@ class _AmbulanceWidgetState extends State<AmbulanceWidget> {
                     alignment: AlignmentDirectional(0, 1),
                     child: Container(
                       width: double.infinity,
-                      height: 220,
+                      height: 300,
                       decoration: BoxDecoration(
                         color: Color(0xFF161853),
                       ),
@@ -151,17 +154,21 @@ class _AmbulanceWidgetState extends State<AmbulanceWidget> {
                                                 () => dropDownValue1 = val),
                                             width: 150,
                                             height: 50,
-                                            textStyle: FlutterFlowTheme
-                                                .bodyText1
-                                                .override(
-                                              fontFamily: 'Poppins',
-                                              color: FlutterFlowTheme
-                                                  .tertiaryColor,
-                                            ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .tertiaryColor,
+                                                    ),
                                             fillColor: Color(0x00FFFFFF),
                                             elevation: 2,
                                             borderColor:
-                                                FlutterFlowTheme.tertiaryColor,
+                                                FlutterFlowTheme.of(context)
+                                                    .tertiaryColor,
                                             borderWidth: 0,
                                             borderRadius: 0,
                                             margin:
@@ -191,17 +198,21 @@ class _AmbulanceWidgetState extends State<AmbulanceWidget> {
                                                 () => dropDownValue2 = val),
                                             width: 150,
                                             height: 50,
-                                            textStyle: FlutterFlowTheme
-                                                .bodyText1
-                                                .override(
-                                              fontFamily: 'Poppins',
-                                              color: FlutterFlowTheme
-                                                  .tertiaryColor,
-                                            ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .tertiaryColor,
+                                                    ),
                                             fillColor: Color(0x00FFFFFF),
                                             elevation: 2,
                                             borderColor:
-                                                FlutterFlowTheme.tertiaryColor,
+                                                FlutterFlowTheme.of(context)
+                                                    .tertiaryColor,
                                             borderWidth: 0,
                                             borderRadius: 0,
                                             margin:
@@ -228,11 +239,14 @@ class _AmbulanceWidgetState extends State<AmbulanceWidget> {
                               options: FFButtonOptions(
                                 width: 300,
                                 height: 40,
-                                color: FlutterFlowTheme.primaryColor,
-                                textStyle: FlutterFlowTheme.subtitle2.override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.white,
-                                ),
+                                color:
+                                    FlutterFlowTheme.of(context).primaryColor,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                    ),
                                 borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1,
@@ -255,12 +269,14 @@ class _AmbulanceWidgetState extends State<AmbulanceWidget> {
                                 options: FFButtonOptions(
                                   width: 300,
                                   height: 40,
-                                  color: FlutterFlowTheme.primaryColor,
-                                  textStyle:
-                                      FlutterFlowTheme.subtitle2.override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.white,
-                                  ),
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .subtitle2
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                      ),
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1,

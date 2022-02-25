@@ -30,12 +30,12 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                 children: [
                   Text(
                     'Activity',
-                    style: FlutterFlowTheme.title1.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Color(0xFF090F13),
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: FlutterFlowTheme.of(context).title1.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Color(0xFF090F13),
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
                   ),
                 ],
               ),
@@ -47,12 +47,12 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                 children: [
                   Text(
                     'All Activity from this past month.',
-                    style: FlutterFlowTheme.bodyText2.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Color(0xFF8B97A2),
-                      fontSize: 14,
-                      fontWeight: FontWeight.normal,
-                    ),
+                    style: FlutterFlowTheme.of(context).bodyText2.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Color(0xFF8B97A2),
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                        ),
                   ),
                 ],
               ),

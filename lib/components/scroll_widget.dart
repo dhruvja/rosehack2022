@@ -31,7 +31,7 @@ class _ScrollWidgetState extends State<ScrollWidget> {
                 width: 580,
                 height: 120,
                 decoration: BoxDecoration(
-                  color: Color(0xFFFEFEFE),
+                  color: Colors.black,
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
@@ -68,7 +68,8 @@ class _ScrollWidgetState extends State<ScrollWidget> {
                                     children: [
                                       Icon(
                                         Icons.plumbing,
-                                        color: FlutterFlowTheme.tertiaryColor,
+                                        color: FlutterFlowTheme.of(context)
+                                            .tertiaryColor,
                                         size: 40,
                                       ),
                                     ],
@@ -79,7 +80,14 @@ class _ScrollWidgetState extends State<ScrollWidget> {
                                     children: [
                                       Text(
                                         'Plumber',
-                                        style: FlutterFlowTheme.bodyText1,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiaryColor,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -100,7 +108,7 @@ class _ScrollWidgetState extends State<ScrollWidget> {
                             width: 120,
                             height: 100,
                             decoration: BoxDecoration(
-                              color: Color(0x72FF0000),
+                              color: Color(0xFFB9FF05),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: InkWell(
@@ -122,7 +130,8 @@ class _ScrollWidgetState extends State<ScrollWidget> {
                                     children: [
                                       Icon(
                                         Icons.electrical_services_rounded,
-                                        color: FlutterFlowTheme.tertiaryColor,
+                                        color: FlutterFlowTheme.of(context)
+                                            .tertiaryColor,
                                         size: 40,
                                       ),
                                     ],
@@ -133,7 +142,14 @@ class _ScrollWidgetState extends State<ScrollWidget> {
                                     children: [
                                       Text(
                                         'Electrician',
-                                        style: FlutterFlowTheme.bodyText1,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiaryColor,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -176,7 +192,8 @@ class _ScrollWidgetState extends State<ScrollWidget> {
                                     children: [
                                       Icon(
                                         Icons.nature,
-                                        color: FlutterFlowTheme.tertiaryColor,
+                                        color: FlutterFlowTheme.of(context)
+                                            .tertiaryColor,
                                         size: 40,
                                       ),
                                     ],
@@ -187,7 +204,14 @@ class _ScrollWidgetState extends State<ScrollWidget> {
                                     children: [
                                       Text(
                                         'Nurse',
-                                        style: FlutterFlowTheme.bodyText1,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiaryColor,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -208,7 +232,7 @@ class _ScrollWidgetState extends State<ScrollWidget> {
                             width: 120,
                             height: 100,
                             decoration: BoxDecoration(
-                              color: Color(0xFFE9ACE9),
+                              color: Colors.red,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: InkWell(
@@ -231,7 +255,8 @@ class _ScrollWidgetState extends State<ScrollWidget> {
                                     children: [
                                       Icon(
                                         Icons.animation,
-                                        color: FlutterFlowTheme.tertiaryColor,
+                                        color: FlutterFlowTheme.of(context)
+                                            .tertiaryColor,
                                         size: 40,
                                       ),
                                     ],
@@ -242,7 +267,14 @@ class _ScrollWidgetState extends State<ScrollWidget> {
                                     children: [
                                       Text(
                                         'Carpenting',
-                                        style: FlutterFlowTheme.bodyText1,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiaryColor,
+                                            ),
                                       ),
                                     ],
                                   ),

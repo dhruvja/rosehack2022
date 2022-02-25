@@ -54,13 +54,14 @@ class _Scroll2WidgetState extends State<Scroll2Widget> {
                                     Expanded(
                                       child: Text(
                                         'Total Likes',
-                                        style:
-                                            FlutterFlowTheme.bodyText2.override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF8B97A2),
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w500,
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText2
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color: Color(0xFF8B97A2),
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                            ),
                                       ),
                                     ),
                                     Card(
@@ -72,8 +73,8 @@ class _Scroll2WidgetState extends State<Scroll2Widget> {
                                         child: Text(
                                           '^ 25%',
                                           style: TextStyle(
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiaryColor,
                                             fontWeight: FontWeight.w500,
                                             fontSize: 10,
                                           ),
@@ -91,12 +92,14 @@ class _Scroll2WidgetState extends State<Scroll2Widget> {
                                         8, 0, 0, 8),
                                     child: Text(
                                       '4',
-                                      style: FlutterFlowTheme.title2.override(
-                                        fontFamily: 'Lexend Deca',
-                                        color: Color(0xFF4B39EF),
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.w500,
-                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .title2
+                                          .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color: Color(0xFF4B39EF),
+                                            fontSize: 22,
+                                            fontWeight: FontWeight.w500,
+                                          ),
                                     ),
                                   ),
                                 ],
@@ -129,13 +132,14 @@ class _Scroll2WidgetState extends State<Scroll2Widget> {
                                       Expanded(
                                         child: Text(
                                           'Number of reviews',
-                                          style: FlutterFlowTheme.bodyText2
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText2
                                               .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: Color(0xFF8B97A2),
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w500,
-                                          ),
+                                                fontFamily: 'Lexend Deca',
+                                                color: Color(0xFF8B97A2),
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500,
+                                              ),
                                         ),
                                       ),
                                       Card(
@@ -167,12 +171,14 @@ class _Scroll2WidgetState extends State<Scroll2Widget> {
                                           8, 0, 0, 8),
                                       child: Text(
                                         '20',
-                                        style: FlutterFlowTheme.title2.override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF3BC821),
-                                          fontSize: 22,
-                                          fontWeight: FontWeight.w500,
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .title2
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color: Color(0xFF3BC821),
+                                              fontSize: 22,
+                                              fontWeight: FontWeight.w500,
+                                            ),
                                       ),
                                     ),
                                   ],

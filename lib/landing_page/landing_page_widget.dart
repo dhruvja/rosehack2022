@@ -73,12 +73,14 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                     children: [
                                       Text(
                                         'Emergency!!',
-                                        style: FlutterFlowTheme.title1.override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Colors.white,
-                                          fontSize: 32,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .title1
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color: Colors.white,
+                                              fontSize: 32,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -92,13 +94,14 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                       Expanded(
                                         child: Text(
                                           'Never wait for the time , pick the call in your fingertips..',
-                                          style: FlutterFlowTheme.subtitle2
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle2
                                               .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: Color(0x99FFFFFF),
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w500,
-                                          ),
+                                                fontFamily: 'Lexend Deca',
+                                                color: Color(0x99FFFFFF),
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w500,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -129,14 +132,16 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                             width: 170,
                                             height: 50,
                                             color: Color(0xFF39D2C0),
-                                            textStyle: FlutterFlowTheme
-                                                .subtitle2
-                                                .override(
-                                              fontFamily: 'Lexend Deca',
-                                              color: Colors.white,
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                            ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .subtitle2
+                                                    .override(
+                                                      fontFamily: 'Lexend Deca',
+                                                      color: Colors.white,
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
                                             elevation: 2,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -186,12 +191,14 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                     children: [
                                       Text(
                                         'World is silent',
-                                        style: FlutterFlowTheme.title1.override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Colors.white,
-                                          fontSize: 32,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .title1
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color: Colors.white,
+                                              fontSize: 32,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -205,13 +212,14 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                       Expanded(
                                         child: Text(
                                           'Dont hide the darkest issues, We are there for your silence break!',
-                                          style: FlutterFlowTheme.subtitle2
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle2
                                               .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: Color(0x99FFFFFF),
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w500,
-                                          ),
+                                                fontFamily: 'Lexend Deca',
+                                                color: Color(0x99FFFFFF),
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w500,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -241,14 +249,16 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                             width: 170,
                                             height: 50,
                                             color: Colors.white,
-                                            textStyle: FlutterFlowTheme
-                                                .subtitle2
-                                                .override(
-                                              fontFamily: 'Lexend Deca',
-                                              color: Color(0xFF39D2C0),
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                            ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .subtitle2
+                                                    .override(
+                                                      fontFamily: 'Lexend Deca',
+                                                      color: Color(0xFF39D2C0),
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
                                             elevation: 2,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -298,12 +308,14 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                     children: [
                                       Text(
                                         'Hii Friend😁',
-                                        style: FlutterFlowTheme.title1.override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF151B1E),
-                                          fontSize: 32,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .title1
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color: Color(0xFF151B1E),
+                                              fontSize: 32,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -317,13 +329,14 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                       Expanded(
                                         child: Text(
                                           'When you need one, you already had one!!, Mitra a friend in hand.',
-                                          style: FlutterFlowTheme.subtitle2
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle2
                                               .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: Color(0xFF82878C),
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.normal,
-                                          ),
+                                                fontFamily: 'Lexend Deca',
+                                                color: Color(0xFF82878C),
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.normal,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -347,14 +360,16 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                                             width: 170,
                                             height: 50,
                                             color: Color(0xFF4B39EF),
-                                            textStyle: FlutterFlowTheme
-                                                .subtitle2
-                                                .override(
-                                              fontFamily: 'Lexend Deca',
-                                              color: Colors.white,
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                            ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .subtitle2
+                                                    .override(
+                                                      fontFamily: 'Lexend Deca',
+                                                      color: Colors.white,
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
                                             elevation: 2,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,

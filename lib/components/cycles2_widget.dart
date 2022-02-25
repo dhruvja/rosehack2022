@@ -19,7 +19,7 @@ class _Cycles2WidgetState extends State<Cycles2Widget> {
       width: 700,
       height: 170,
       decoration: BoxDecoration(
-        color: FlutterFlowTheme.tertiaryColor,
+        color: FlutterFlowTheme.of(context).tertiaryColor,
       ),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,

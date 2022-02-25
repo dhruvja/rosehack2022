@@ -55,12 +55,13 @@ class _Service247WidgetState extends State<Service247Widget> {
                           children: [
                             Text(
                               'MITRA',
-                              style: FlutterFlowTheme.title1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0xFF090F13),
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style:
+                                  FlutterFlowTheme.of(context).title1.override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: Color(0xFF090F13),
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                             ),
                           ],
                         ),
@@ -72,12 +73,14 @@ class _Service247WidgetState extends State<Service247Widget> {
                                   EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                               child: Text(
                                 'Your survivor on time',
-                                style: FlutterFlowTheme.bodyText2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF8B97A2),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText2
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF8B97A2),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                               ),
                             ),
                           ],
@@ -132,7 +135,6 @@ class _Service247WidgetState extends State<Service247Widget> {
                       obscureText: false,
                       decoration: InputDecoration(
                         hintText: 'Search',
-                        hintStyle: FlutterFlowTheme.bodyText1,
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0x00000000),
@@ -148,14 +150,14 @@ class _Service247WidgetState extends State<Service247Widget> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         filled: true,
-                        fillColor: FlutterFlowTheme.tertiaryColor,
+                        fillColor: FlutterFlowTheme.of(context).tertiaryColor,
                         contentPadding:
                             EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                         prefixIcon: Icon(
                           Icons.search,
                         ),
                       ),
-                      style: FlutterFlowTheme.bodyText1,
+                      style: FlutterFlowTheme.of(context).bodyText1,
                     ),
                   ),
                 ),
@@ -213,8 +215,9 @@ class _Service247WidgetState extends State<Service247Widget> {
                                             children: [
                                               Icon(
                                                 Icons.plumbing,
-                                                color: FlutterFlowTheme
-                                                    .tertiaryColor,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiaryColor,
                                                 size: 40,
                                               ),
                                             ],
@@ -227,7 +230,8 @@ class _Service247WidgetState extends State<Service247Widget> {
                                               Text(
                                                 'Plumber',
                                                 style:
-                                                    FlutterFlowTheme.bodyText1,
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1,
                                               ),
                                             ],
                                           ),
@@ -274,8 +278,9 @@ class _Service247WidgetState extends State<Service247Widget> {
                                           children: [
                                             Icon(
                                               Icons.electrical_services_rounded,
-                                              color: FlutterFlowTheme
-                                                  .tertiaryColor,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiaryColor,
                                               size: 40,
                                             ),
                                           ],
@@ -287,7 +292,9 @@ class _Service247WidgetState extends State<Service247Widget> {
                                           children: [
                                             Text(
                                               'Electrician',
-                                              style: FlutterFlowTheme.bodyText1,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText1,
                                             ),
                                           ],
                                         ),
@@ -333,8 +340,9 @@ class _Service247WidgetState extends State<Service247Widget> {
                                           children: [
                                             Icon(
                                               Icons.nature,
-                                              color: FlutterFlowTheme
-                                                  .tertiaryColor,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiaryColor,
                                               size: 40,
                                             ),
                                           ],
@@ -346,7 +354,9 @@ class _Service247WidgetState extends State<Service247Widget> {
                                           children: [
                                             Text(
                                               'Nurse',
-                                              style: FlutterFlowTheme.bodyText1,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText1,
                                             ),
                                           ],
                                         ),
@@ -392,8 +402,9 @@ class _Service247WidgetState extends State<Service247Widget> {
                                           children: [
                                             Icon(
                                               Icons.animation,
-                                              color: FlutterFlowTheme
-                                                  .tertiaryColor,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiaryColor,
                                               size: 40,
                                             ),
                                           ],
@@ -405,7 +416,9 @@ class _Service247WidgetState extends State<Service247Widget> {
                                           children: [
                                             Text(
                                               'Carpenting',
-                                              style: FlutterFlowTheme.bodyText1,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText1,
                                             ),
                                           ],
                                         ),

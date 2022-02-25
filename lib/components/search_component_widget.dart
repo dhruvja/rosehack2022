@@ -72,11 +72,12 @@ class _SearchComponentWidgetState extends State<SearchComponentWidget> {
                                     ),
                                     Text(
                                       'Job type',
-                                      style:
-                                          FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'Poppins',
-                                        color: Color(0xFFFEFEFE),
-                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: Color(0xFFFEFEFE),
+                                          ),
                                     ),
                                   ],
                                 ),
@@ -105,11 +106,12 @@ class _SearchComponentWidgetState extends State<SearchComponentWidget> {
                                         child: Text(
                                           'Name',
                                           textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.bodyText1
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1
                                               .override(
-                                            fontFamily: 'Poppins',
-                                            color: Color(0xFFFEFEFE),
-                                          ),
+                                                fontFamily: 'Poppins',
+                                                color: Color(0xFFFEFEFE),
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -124,11 +126,12 @@ class _SearchComponentWidgetState extends State<SearchComponentWidget> {
                                     children: [
                                       Text(
                                         'Location',
-                                        style:
-                                            FlutterFlowTheme.bodyText1.override(
-                                          fontFamily: 'Poppins',
-                                          color: Color(0xFFFEFEFE),
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0xFFFEFEFE),
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -142,24 +145,27 @@ class _SearchComponentWidgetState extends State<SearchComponentWidget> {
                                     children: [
                                       Text(
                                         'Arrival Time',
-                                        style:
-                                            FlutterFlowTheme.bodyText1.override(
-                                          fontFamily: 'Poppins',
-                                          color: Color(0xFFFEFEFE),
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0xFFFEFEFE),
+                                            ),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10, 0, 0, 0),
                                         child: Text(
                                           '15 Mins',
-                                          style: FlutterFlowTheme.bodyText1
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1
                                               .override(
-                                            fontFamily: 'Poppins',
-                                            color:
-                                                FlutterFlowTheme.primaryColor,
-                                            fontWeight: FontWeight.bold,
-                                          ),
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryColor,
+                                                fontWeight: FontWeight.bold,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -174,19 +180,21 @@ class _SearchComponentWidgetState extends State<SearchComponentWidget> {
                                     children: [
                                       Text(
                                         'Experience',
-                                        style:
-                                            FlutterFlowTheme.bodyText1.override(
-                                          fontFamily: 'Poppins',
-                                          color: Color(0xFF289CF0),
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0xFF289CF0),
+                                            ),
                                       ),
                                       Text(
                                         ' 3 Years',
-                                        style:
-                                            FlutterFlowTheme.bodyText1.override(
-                                          fontFamily: 'Poppins',
-                                          color: Color(0xFFFEFEFE),
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0xFFFEFEFE),
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -206,14 +214,16 @@ class _SearchComponentWidgetState extends State<SearchComponentWidget> {
                                           width: 80,
                                           height: 40,
                                           color: Color(0x0039D2C0),
-                                          textStyle: FlutterFlowTheme.subtitle2
-                                              .override(
-                                            fontFamily: 'Poppins',
-                                            color: Color(0xFFFEFEFE),
-                                          ),
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .subtitle2
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    color: Color(0xFFFEFEFE),
+                                                  ),
                                           borderSide: BorderSide(
-                                            color:
-                                                FlutterFlowTheme.primaryColor,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryColor,
                                             width: 1,
                                           ),
                                           borderRadius: 12,
@@ -232,11 +242,13 @@ class _SearchComponentWidgetState extends State<SearchComponentWidget> {
                                           width: 100,
                                           height: 40,
                                           color: Color(0xFFFEFEFE),
-                                          textStyle: FlutterFlowTheme.subtitle2
-                                              .override(
-                                            fontFamily: 'Poppins',
-                                            color: Color(0xC4050E6A),
-                                          ),
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .subtitle2
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    color: Color(0xC4050E6A),
+                                                  ),
                                           borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1,

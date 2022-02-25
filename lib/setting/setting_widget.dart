@@ -78,12 +78,14 @@ class _SettingWidgetState extends State<SettingWidget> {
                             children: [
                               Text(
                                 '[User Name]',
-                                style: FlutterFlowTheme.title3.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .title3
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                               ),
                             ],
                           ),
@@ -95,12 +97,14 @@ class _SettingWidgetState extends State<SettingWidget> {
                             children: [
                               Text(
                                 '[username@domain.com]',
-                                style: FlutterFlowTheme.subtitle2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFFEE8B60),
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFFEE8B60),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                               ),
                             ],
                           ),
@@ -176,12 +180,13 @@ class _SettingWidgetState extends State<SettingWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                             child: Text(
                               '[User Name Here]',
-                              style: FlutterFlowTheme.title1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Colors.white,
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style:
+                                  FlutterFlowTheme.of(context).title1.override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: Colors.white,
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                             ),
                           ),
                         ],
@@ -194,12 +199,14 @@ class _SettingWidgetState extends State<SettingWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                             child: Text(
                               'User.name@domainname.com',
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0xFFEE8B60),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFFEE8B60),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                             ),
                           ),
                         ],
@@ -216,12 +223,12 @@ class _SettingWidgetState extends State<SettingWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(24, 12, 0, 12),
                   child: Text(
                     'Account Settings',
-                    style: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Color(0xFF090F13),
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Color(0xFF090F13),
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
                   ),
                 ),
               ],
@@ -262,12 +269,14 @@ class _SettingWidgetState extends State<SettingWidget> {
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                             child: Text(
                               'Activity',
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0xFF090F13),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF090F13),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                             ),
                           ),
                           Expanded(
@@ -316,12 +325,14 @@ class _SettingWidgetState extends State<SettingWidget> {
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                             child: Text(
                               'My Settings',
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0xFF090F13),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF090F13),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                             ),
                           ),
                           Expanded(
@@ -370,12 +381,14 @@ class _SettingWidgetState extends State<SettingWidget> {
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                             child: Text(
                               'My Notifications',
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0xFF090F13),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF090F13),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                             ),
                           ),
                           Expanded(
@@ -424,12 +437,14 @@ class _SettingWidgetState extends State<SettingWidget> {
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                             child: Text(
                               'Terms of Service',
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0xFF090F13),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF090F13),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                             ),
                           ),
                           Expanded(
@@ -464,12 +479,13 @@ class _SettingWidgetState extends State<SettingWidget> {
                       width: 90,
                       height: 40,
                       color: Colors.white,
-                      textStyle: FlutterFlowTheme.bodyText2.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Color(0xFF4B39EF),
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                      ),
+                      textStyle:
+                          FlutterFlowTheme.of(context).bodyText2.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Color(0xFF4B39EF),
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                              ),
                       elevation: 3,
                       borderSide: BorderSide(
                         color: Colors.transparent,

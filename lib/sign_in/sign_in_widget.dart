@@ -40,13 +40,13 @@ class _SignInWidgetState extends State<SignInWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: formKey,
-      autovalidateMode: AutovalidateMode.always,
-      child: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: Color(0xFFF5F5F5),
-        body: SafeArea(
+    return Scaffold(
+      key: scaffoldKey,
+      backgroundColor: Color(0xFFF5F5F5),
+      body: SafeArea(
+        child: Form(
+          key: formKey,
+          autovalidateMode: AutovalidateMode.always,
           child: Container(
             width: double.infinity,
             height: double.infinity,
@@ -79,13 +79,9 @@ class _SignInWidgetState extends State<SignInWidget> {
                     obscureText: false,
                     decoration: InputDecoration(
                       hintText: 'Your name',
-                      hintStyle: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                        color: Color(0x8EF0F5F6),
-                      ),
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.tertiaryColor,
+                          color: FlutterFlowTheme.of(context).tertiaryColor,
                           width: 1,
                         ),
                         borderRadius: const BorderRadius.only(
@@ -95,7 +91,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.tertiaryColor,
+                          color: FlutterFlowTheme.of(context).tertiaryColor,
                           width: 1,
                         ),
                         borderRadius: const BorderRadius.only(
@@ -105,13 +101,13 @@ class _SignInWidgetState extends State<SignInWidget> {
                       ),
                       prefixIcon: Icon(
                         Icons.ac_unit_rounded,
-                        color: FlutterFlowTheme.tertiaryColor,
+                        color: FlutterFlowTheme.of(context).tertiaryColor,
                       ),
                     ),
-                    style: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Poppins',
-                      color: Color(0x8EF0F5F6),
-                    ),
+                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                          fontFamily: 'Poppins',
+                          color: Color(0x8EF0F5F6),
+                        ),
                   ),
                 ),
                 Padding(
@@ -126,13 +122,9 @@ class _SignInWidgetState extends State<SignInWidget> {
                     obscureText: false,
                     decoration: InputDecoration(
                       hintText: 'Mobile number',
-                      hintStyle: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                        color: Color(0x8EF0F5F6),
-                      ),
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.tertiaryColor,
+                          color: FlutterFlowTheme.of(context).tertiaryColor,
                           width: 1,
                         ),
                         borderRadius: const BorderRadius.only(
@@ -142,7 +134,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.tertiaryColor,
+                          color: FlutterFlowTheme.of(context).tertiaryColor,
                           width: 1,
                         ),
                         borderRadius: const BorderRadius.only(
@@ -163,10 +155,10 @@ class _SignInWidgetState extends State<SignInWidget> {
                             )
                           : null,
                     ),
-                    style: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Poppins',
-                      color: Color(0x8EF0F5F6),
-                    ),
+                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                          fontFamily: 'Poppins',
+                          color: Color(0x8EF0F5F6),
+                        ),
                     validator: (val) {
                       if (val.isEmpty) {
                         return 'Field is required';
@@ -185,13 +177,9 @@ class _SignInWidgetState extends State<SignInWidget> {
                     obscureText: false,
                     decoration: InputDecoration(
                       hintText: 'Aadhar number',
-                      hintStyle: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                        color: Color(0x8EF0F5F6),
-                      ),
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.tertiaryColor,
+                          color: FlutterFlowTheme.of(context).tertiaryColor,
                           width: 1,
                         ),
                         borderRadius: const BorderRadius.only(
@@ -201,7 +189,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.tertiaryColor,
+                          color: FlutterFlowTheme.of(context).tertiaryColor,
                           width: 1,
                         ),
                         borderRadius: const BorderRadius.only(
@@ -210,10 +198,10 @@ class _SignInWidgetState extends State<SignInWidget> {
                         ),
                       ),
                     ),
-                    style: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Poppins',
-                      color: Color(0x8EF0F5F6),
-                    ),
+                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                          fontFamily: 'Poppins',
+                          color: Color(0x8EF0F5F6),
+                        ),
                     validator: (val) {
                       if (val.isEmpty) {
                         return 'Please enter Aadhar Number';
@@ -235,13 +223,9 @@ class _SignInWidgetState extends State<SignInWidget> {
                     obscureText: false,
                     decoration: InputDecoration(
                       hintText: 'Email id',
-                      hintStyle: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                        color: Color(0x8EF0F5F6),
-                      ),
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.tertiaryColor,
+                          color: FlutterFlowTheme.of(context).tertiaryColor,
                           width: 1,
                         ),
                         borderRadius: const BorderRadius.only(
@@ -251,7 +235,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.tertiaryColor,
+                          color: FlutterFlowTheme.of(context).tertiaryColor,
                           width: 1,
                         ),
                         borderRadius: const BorderRadius.only(
@@ -272,10 +256,10 @@ class _SignInWidgetState extends State<SignInWidget> {
                             )
                           : null,
                     ),
-                    style: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Poppins',
-                      color: Color(0x8EF0F5F6),
-                    ),
+                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                          fontFamily: 'Poppins',
+                          color: Color(0x8EF0F5F6),
+                        ),
                   ),
                 ),
                 Padding(
@@ -285,13 +269,9 @@ class _SignInWidgetState extends State<SignInWidget> {
                     obscureText: !passwordVisibility1,
                     decoration: InputDecoration(
                       hintText: 'Password',
-                      hintStyle: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                        color: Color(0x8EF0F5F6),
-                      ),
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.tertiaryColor,
+                          color: FlutterFlowTheme.of(context).tertiaryColor,
                           width: 1,
                         ),
                         borderRadius: const BorderRadius.only(
@@ -301,7 +281,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.tertiaryColor,
+                          color: FlutterFlowTheme.of(context).tertiaryColor,
                           width: 1,
                         ),
                         borderRadius: const BorderRadius.only(
@@ -322,10 +302,10 @@ class _SignInWidgetState extends State<SignInWidget> {
                         ),
                       ),
                     ),
-                    style: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Poppins',
-                      color: Color(0x8EF0F5F6),
-                    ),
+                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                          fontFamily: 'Poppins',
+                          color: Color(0x8EF0F5F6),
+                        ),
                   ),
                 ),
                 Padding(
@@ -335,13 +315,9 @@ class _SignInWidgetState extends State<SignInWidget> {
                     obscureText: !passwordVisibility2,
                     decoration: InputDecoration(
                       hintText: 'Confirm Password',
-                      hintStyle: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                        color: Color(0x8EF0F5F6),
-                      ),
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.tertiaryColor,
+                          color: FlutterFlowTheme.of(context).tertiaryColor,
                           width: 1,
                         ),
                         borderRadius: const BorderRadius.only(
@@ -351,7 +327,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.tertiaryColor,
+                          color: FlutterFlowTheme.of(context).tertiaryColor,
                           width: 1,
                         ),
                         borderRadius: const BorderRadius.only(
@@ -372,10 +348,10 @@ class _SignInWidgetState extends State<SignInWidget> {
                         ),
                       ),
                     ),
-                    style: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Poppins',
-                      color: Color(0x8EF0F5F6),
-                    ),
+                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                          fontFamily: 'Poppins',
+                          color: Color(0x8EF0F5F6),
+                        ),
                   ),
                 ),
                 FFButtonWidget(
@@ -392,12 +368,12 @@ class _SignInWidgetState extends State<SignInWidget> {
                     width: 130,
                     height: 40,
                     color: Color(0xFF0F044C),
-                    textStyle: FlutterFlowTheme.subtitle2.override(
-                      fontFamily: 'Poppins',
-                      color: Colors.white,
-                    ),
+                    textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                          fontFamily: 'Poppins',
+                          color: Colors.white,
+                        ),
                     borderSide: BorderSide(
-                      color: FlutterFlowTheme.tertiaryColor,
+                      color: FlutterFlowTheme.of(context).tertiaryColor,
                       width: 1,
                     ),
                     borderRadius: 12,

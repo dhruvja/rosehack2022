@@ -32,16 +32,16 @@ class _CycleWidgetState extends State<CycleWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.tertiaryColor,
+      backgroundColor: FlutterFlowTheme.of(context).tertiaryColor,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           print('FloatingActionButton pressed ...');
         },
-        backgroundColor: FlutterFlowTheme.primaryColor,
+        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
         elevation: 8,
         child: Icon(
           Icons.add,
-          color: FlutterFlowTheme.tertiaryColor,
+          color: FlutterFlowTheme.of(context).tertiaryColor,
           size: 28,
         ),
       ),
@@ -76,7 +76,7 @@ class _CycleWidgetState extends State<CycleWidget> {
                         borderRadius: BorderRadius.circular(0),
                       ),
                       child: FlutterFlowCalendar(
-                        color: FlutterFlowTheme.tertiaryColor,
+                        color: FlutterFlowTheme.of(context).tertiaryColor,
                         iconColor: Color(0xFFFEFEFE),
                         weekFormat: false,
                         weekStartsMonday: false,
@@ -98,10 +98,11 @@ class _CycleWidgetState extends State<CycleWidget> {
                           fontWeight: FontWeight.bold,
                           fontStyle: FontStyle.normal,
                         ),
-                        inactiveDateStyle: FlutterFlowTheme.subtitle1.override(
-                          fontFamily: 'Poppins',
-                          color: Color(0xFF77BF18),
-                        ),
+                        inactiveDateStyle:
+                            FlutterFlowTheme.of(context).subtitle1.override(
+                                  fontFamily: 'Poppins',
+                                  color: Color(0xFF77BF18),
+                                ),
                       ),
                     ),
                   ),
@@ -114,11 +115,11 @@ class _CycleWidgetState extends State<CycleWidget> {
                   children: [
                     Text(
                       'Cycle',
-                      style: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                        color: FlutterFlowTheme.primaryColor,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Poppins',
+                            color: FlutterFlowTheme.of(context).primaryColor,
+                            fontWeight: FontWeight.w600,
+                          ),
                     ),
                   ],
                 ),
@@ -139,11 +140,11 @@ class _CycleWidgetState extends State<CycleWidget> {
                   children: [
                     Text(
                       'Task',
-                      style: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                        color: FlutterFlowTheme.primaryColor,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Poppins',
+                            color: FlutterFlowTheme.of(context).primaryColor,
+                            fontWeight: FontWeight.w600,
+                          ),
                     ),
                   ],
                 ),

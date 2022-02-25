@@ -40,7 +40,7 @@ class _DateWidgetState extends State<DateWidget> {
                   children: [
                     Text(
                       'Personal',
-                      style: FlutterFlowTheme.subtitle2,
+                      style: FlutterFlowTheme.of(context).subtitle2,
                     ),
                     Icon(
                       Icons.face,
@@ -71,7 +71,7 @@ class _DateWidgetState extends State<DateWidget> {
                 children: [
                   Text(
                     'Date',
-                    style: FlutterFlowTheme.subtitle2,
+                    style: FlutterFlowTheme.of(context).subtitle2,
                   ),
                   Icon(
                     Icons.date_range_outlined,

@@ -18,19 +18,19 @@ class _HomeComponentWidgetState extends State<HomeComponentWidget> {
       children: [
         Container(
           width: double.infinity,
-          height: 320,
+          height: 280,
           decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/No_way_for_Ambulance.png',
-              ).image,
-            ),
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 5,
+                color: Color(0xFF4A99AD),
+              )
+            ],
             gradient: LinearGradient(
-              colors: [Color(0xFF1E2429), Color(0x001E2429)],
-              stops: [0, 1],
-              begin: AlignmentDirectional(0, 1),
-              end: AlignmentDirectional(0, -1),
+              colors: [Color(0xFF158DF1), Color(0xFFFAF9F9)],
+              stops: [0.7, 1],
+              begin: AlignmentDirectional(0.98, 1),
+              end: AlignmentDirectional(-0.98, -1),
             ),
           ),
           child: Column(
@@ -42,7 +42,7 @@ class _HomeComponentWidgetState extends State<HomeComponentWidget> {
                 child: Image.asset(
                   'assets/images/logo3.png',
                   width: 230,
-                  height: 90,
+                  height: 70,
                   fit: BoxFit.fitWidth,
                 ),
               ),
@@ -59,11 +59,11 @@ class _HomeComponentWidgetState extends State<HomeComponentWidget> {
                         children: [
                           Text(
                             'Welcome!',
-                            style: FlutterFlowTheme.title1.override(
-                              fontFamily: 'Montserrat',
-                              color: Colors.white,
-                              fontSize: 36,
-                            ),
+                            style: FlutterFlowTheme.of(context).title1.override(
+                                  fontFamily: 'Lato',
+                                  color: Colors.white,
+                                  fontSize: 36,
+                                ),
                           ),
                         ],
                       ),
@@ -76,10 +76,11 @@ class _HomeComponentWidgetState extends State<HomeComponentWidget> {
                         children: [
                           Text(
                             'Find your Service in clicks',
-                            style: FlutterFlowTheme.title3.override(
-                              fontFamily: 'Roboto',
-                              color: FlutterFlowTheme.tertiaryColor,
-                            ),
+                            style: FlutterFlowTheme.of(context).title3.override(
+                                  fontFamily: 'Roboto',
+                                  color: FlutterFlowTheme.of(context)
+                                      .tertiaryColor,
+                                ),
                           ),
                         ],
                       ),

@@ -74,10 +74,6 @@ class _ResultWidgetState extends State<ResultWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 hintText: 'Aruna Hospital',
-                                hintStyle: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.tertiaryColor,
-                                ),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -103,10 +99,13 @@ class _ResultWidgetState extends State<ResultWidget> {
                                   color: Color(0xFF22FFE3),
                                 ),
                               ),
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.tertiaryColor,
-                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .tertiaryColor,
+                                  ),
                             ),
                           ),
                         ),
@@ -120,10 +119,6 @@ class _ResultWidgetState extends State<ResultWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 hintText: 'Noursing home',
-                                hintStyle: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.tertiaryColor,
-                                ),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -146,13 +141,17 @@ class _ResultWidgetState extends State<ResultWidget> {
                                 ),
                                 prefixIcon: Icon(
                                   Icons.local_hospital,
-                                  color: FlutterFlowTheme.tertiaryColor,
+                                  color: FlutterFlowTheme.of(context)
+                                      .tertiaryColor,
                                 ),
                               ),
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.tertiaryColor,
-                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .tertiaryColor,
+                                  ),
                             ),
                           ),
                         ),
@@ -166,10 +165,6 @@ class _ResultWidgetState extends State<ResultWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 hintText: 'Near High school field',
-                                hintStyle: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                  color: Color(0xFFF1C20C),
-                                ),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -192,13 +187,16 @@ class _ResultWidgetState extends State<ResultWidget> {
                                 ),
                                 prefixIcon: Icon(
                                   Icons.play_for_work,
-                                  color: FlutterFlowTheme.tertiaryColor,
+                                  color: FlutterFlowTheme.of(context)
+                                      .tertiaryColor,
                                 ),
                               ),
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Poppins',
-                                color: Color(0xFFF1C20C),
-                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFFF1C20C),
+                                  ),
                             ),
                           ),
                         ),
@@ -219,11 +217,11 @@ class _ResultWidgetState extends State<ResultWidget> {
                 options: FFButtonOptions(
                   width: 200,
                   height: 40,
-                  color: FlutterFlowTheme.primaryColor,
-                  textStyle: FlutterFlowTheme.subtitle2.override(
-                    fontFamily: 'Poppins',
-                    color: Colors.white,
-                  ),
+                  color: FlutterFlowTheme.of(context).primaryColor,
+                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                        fontFamily: 'Poppins',
+                        color: Colors.white,
+                      ),
                   borderSide: BorderSide(
                     color: Colors.transparent,
                     width: 1,

@@ -36,7 +36,7 @@ class _CompletedtaskWidgetState extends State<CompletedtaskWidget> {
               width: 4,
               height: double.infinity,
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.primaryColor,
+                color: FlutterFlowTheme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(4),
               ),
             ),
@@ -50,37 +50,37 @@ class _CompletedtaskWidgetState extends State<CompletedtaskWidget> {
                   children: [
                     Text(
                       'Completed',
-                      style: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                        color: Color(0xFF307F07),
-                        fontWeight: FontWeight.w500,
-                      ),
+                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Poppins',
+                            color: Color(0xFF307F07),
+                            fontWeight: FontWeight.w500,
+                          ),
                     ),
                     Text(
                       'Estimated date of complition',
-                      style: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                        fontSize: 10,
-                      ),
+                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Poppins',
+                            fontSize: 10,
+                          ),
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                       child: Text(
                         '15-Jan-2022',
-                        style: FlutterFlowTheme.title1.override(
-                          fontFamily: 'Poppins',
-                          fontSize: 16,
-                        ),
+                        style: FlutterFlowTheme.of(context).title1.override(
+                              fontFamily: 'Poppins',
+                              fontSize: 16,
+                            ),
                       ),
                     ),
                     Text(
                       'Check in',
-                      style: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                        color: FlutterFlowTheme.primaryColor,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                      ),
+                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Poppins',
+                            color: FlutterFlowTheme.of(context).primaryColor,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                          ),
                     ),
                   ],
                 ),
@@ -95,7 +95,7 @@ class _CompletedtaskWidgetState extends State<CompletedtaskWidget> {
                 children: [
                   Text(
                     'Started on',
-                    style: FlutterFlowTheme.bodyText1,
+                    style: FlutterFlowTheme.of(context).bodyText1,
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 8),
@@ -107,12 +107,13 @@ class _CompletedtaskWidgetState extends State<CompletedtaskWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(4, 4, 0, 0),
                           child: Text(
                             '15-Jan-2022',
-                            style: FlutterFlowTheme.title3.override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.primaryColor,
-                              fontSize: 10,
-                              fontWeight: FontWeight.w600,
-                            ),
+                            style: FlutterFlowTheme.of(context).title3.override(
+                                  fontFamily: 'Poppins',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w600,
+                                ),
                           ),
                         ),
                       ],

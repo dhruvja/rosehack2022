@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'auth/firebase_user_provider.dart';
 
-import '../flutter_flow/flutter_flow_theme.dart';
+import 'flutter_flow/flutter_flow_theme.dart';
+import 'flutter_flow/internationalization.dart';
 import 'package:mitra/landing_page/landing_page_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,12 +24,22 @@ class MyApp extends StatefulWidget {
   // This widget is the root of your application.
   @override
   _MyAppState createState() => _MyAppState();
+
+  static _MyAppState of(BuildContext context) =>
+      context.findAncestorStateOfType<_MyAppState>();
 }
 
 class _MyAppState extends State<MyApp> {
+  Locale _locale;
+  ThemeMode _themeMode = ThemeMode.system;
   Stream<MitraFirebaseUser> userStream;
   MitraFirebaseUser initialUser;
   bool displaySplashImage = true;
+
+  void setLocale(Locale value) => setState(() => _locale = value);
+  void setThemeMode(ThemeMode mode) => setState(() {
+        _themeMode = mode;
+      });
 
   @override
   void initState() {
@@ -44,12 +55,15 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Mitra',
       localizationsDelegates: [
+        FFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
+      locale: _locale,
       supportedLocales: const [Locale('en', '')],
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(brightness: Brightness.light),
+      themeMode: _themeMode,
       home: initialUser == null || displaySplashImage
           ? Container(
               color: Colors.transparent,
@@ -100,12 +114,12 @@ class _NavBarPageState extends State<NavBarPage> {
         currentIndex: currentIndex,
         onTap: (i) => setState(() => _currentPage = tabs.keys.toList()[i]),
         backgroundColor: Colors.white,
-        selectedItemColor: FlutterFlowTheme.primaryColor,
+        selectedItemColor: FlutterFlowTheme.of(context).primaryColor,
         unselectedItemColor: Color(0x8A000000),
         showSelectedLabels: false,
         showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home_outlined,

@@ -47,12 +47,12 @@ class _ForumPostWidgetState extends State<ForumPostWidget> {
         ),
         title: Text(
           'Post to Forum',
-          style: FlutterFlowTheme.bodyText1.override(
-            fontFamily: 'Lexend Deca',
-            color: Color(0xFF14181B),
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-          ),
+          style: FlutterFlowTheme.of(context).bodyText1.override(
+                fontFamily: 'Lexend Deca',
+                color: Color(0xFF14181B),
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+              ),
         ),
         actions: [],
         centerTitle: true,
@@ -106,16 +106,25 @@ class _ForumPostWidgetState extends State<ForumPostWidget> {
                       if (selectedMedia != null &&
                           validateFileFormat(
                               selectedMedia.storagePath, context)) {
-                        showUploadMessage(context, 'Uploading file...',
-                            showLoading: true);
+                        showUploadMessage(
+                          context,
+                          'Uploading file...',
+                          showLoading: true,
+                        );
                         final downloadUrl = await uploadData(
                             selectedMedia.storagePath, selectedMedia.bytes);
                         ScaffoldMessenger.of(context).hideCurrentSnackBar();
                         if (downloadUrl != null) {
                           setState(() => uploadedFileUrl = downloadUrl);
-                          showUploadMessage(context, 'Success!');
+                          showUploadMessage(
+                            context,
+                            'Success!',
+                          );
                         } else {
-                          showUploadMessage(context, 'Failed to upload media');
+                          showUploadMessage(
+                            context,
+                            'Failed to upload media',
+                          );
                           return;
                         }
                       }
@@ -125,12 +134,13 @@ class _ForumPostWidgetState extends State<ForumPostWidget> {
                       width: 130,
                       height: 40,
                       color: Colors.white,
-                      textStyle: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Color(0xFF050E6A),
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                      ),
+                      textStyle:
+                          FlutterFlowTheme.of(context).bodyText1.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Color(0xFF050E6A),
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                              ),
                       elevation: 2,
                       borderSide: BorderSide(
                         color: Colors.transparent,
@@ -149,19 +159,19 @@ class _ForumPostWidgetState extends State<ForumPostWidget> {
                 obscureText: false,
                 decoration: InputDecoration(
                   labelText: 'Full Name',
-                  labelStyle: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Color(0xFF95A1AC),
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                  ),
+                  labelStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Color(0xFF95A1AC),
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                      ),
                   hintText: 'Your full name...',
-                  hintStyle: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Color(0xFF95A1AC),
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                  ),
+                  hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Color(0xFF95A1AC),
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                      ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Color(0xFFDBE2E7),
@@ -180,12 +190,12 @@ class _ForumPostWidgetState extends State<ForumPostWidget> {
                   fillColor: Colors.white,
                   contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
                 ),
-                style: FlutterFlowTheme.bodyText1.override(
-                  fontFamily: 'Lexend Deca',
-                  color: Color(0xFF14181B),
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
-                ),
+                style: FlutterFlowTheme.of(context).bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Color(0xFF14181B),
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                    ),
               ),
             ),
             Padding(
@@ -195,19 +205,19 @@ class _ForumPostWidgetState extends State<ForumPostWidget> {
                 obscureText: false,
                 decoration: InputDecoration(
                   labelText: 'Subject',
-                  labelStyle: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Color(0xFF95A1AC),
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                  ),
+                  labelStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Color(0xFF95A1AC),
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                      ),
                   hintText: 'Your email..',
-                  hintStyle: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Color(0xFF95A1AC),
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                  ),
+                  hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Color(0xFF95A1AC),
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                      ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Color(0xFFDBE2E7),
@@ -226,12 +236,12 @@ class _ForumPostWidgetState extends State<ForumPostWidget> {
                   fillColor: Colors.white,
                   contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
                 ),
-                style: FlutterFlowTheme.bodyText1.override(
-                  fontFamily: 'Lexend Deca',
-                  color: Color(0xFF14181B),
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
-                ),
+                style: FlutterFlowTheme.of(context).bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Color(0xFF14181B),
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                    ),
               ),
             ),
             Padding(
@@ -241,19 +251,19 @@ class _ForumPostWidgetState extends State<ForumPostWidget> {
                 obscureText: false,
                 decoration: InputDecoration(
                   labelText: 'Post',
-                  labelStyle: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Color(0xFF95A1AC),
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                  ),
+                  labelStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Color(0xFF95A1AC),
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                      ),
                   hintText: 'A little about you...',
-                  hintStyle: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Lexend Deca',
-                    color: Color(0xFF95A1AC),
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                  ),
+                  hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Color(0xFF95A1AC),
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                      ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Color(0xFFDBE2E7),
@@ -272,12 +282,12 @@ class _ForumPostWidgetState extends State<ForumPostWidget> {
                   fillColor: Colors.white,
                   contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
                 ),
-                style: FlutterFlowTheme.bodyText1.override(
-                  fontFamily: 'Lexend Deca',
-                  color: Color(0xFF14181B),
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
-                ),
+                style: FlutterFlowTheme.of(context).bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Color(0xFF14181B),
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                    ),
                 textAlign: TextAlign.start,
                 maxLines: 6,
               ),
@@ -295,12 +305,12 @@ class _ForumPostWidgetState extends State<ForumPostWidget> {
                     width: 340,
                     height: 60,
                     color: Color(0xC4050E6A),
-                    textStyle: FlutterFlowTheme.subtitle2.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                    ),
+                    textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                        ),
                     elevation: 2,
                     borderSide: BorderSide(
                       color: Colors.transparent,

@@ -40,10 +40,10 @@ class _TheftWidgetState extends State<TheftWidget> {
               width: 130,
               height: 40,
               color: Color(0xFF34C108),
-              textStyle: FlutterFlowTheme.subtitle2.override(
-                fontFamily: 'Poppins',
-                color: Colors.white,
-              ),
+              textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                    fontFamily: 'Poppins',
+                    color: Colors.white,
+                  ),
               borderSide: BorderSide(
                 color: Colors.transparent,
                 width: 1,
@@ -62,10 +62,10 @@ class _TheftWidgetState extends State<TheftWidget> {
                 width: 130,
                 height: 40,
                 color: Color(0xFFF02E31),
-                textStyle: FlutterFlowTheme.subtitle2.override(
-                  fontFamily: 'Poppins',
-                  color: Colors.white,
-                ),
+                textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                      fontFamily: 'Poppins',
+                      color: Colors.white,
+                    ),
                 borderSide: BorderSide(
                   color: Colors.transparent,
                   width: 1,

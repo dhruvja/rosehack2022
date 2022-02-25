@@ -150,12 +150,12 @@ class _CarParkingWidgetState extends State<CarParkingWidget>
                 children: [
                   Text(
                     'Your Car',
-                    style: FlutterFlowTheme.bodyText2.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Color(0xFF8B97A2),
-                      fontSize: 14,
-                      fontWeight: FontWeight.normal,
-                    ),
+                    style: FlutterFlowTheme.of(context).bodyText2.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Color(0xFF8B97A2),
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                        ),
                   ),
                 ],
               ),
@@ -168,12 +168,12 @@ class _CarParkingWidgetState extends State<CarParkingWidget>
                 children: [
                   Text(
                     'Fleet Model 42',
-                    style: FlutterFlowTheme.title1.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: FlutterFlowTheme.of(context).title1.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Colors.white,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
                   ),
                   Card(
                     clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -235,7 +235,7 @@ class _CarParkingWidgetState extends State<CarParkingWidget>
                       'Lexend Deca',
                       color: Colors.white,
                       fontWeight: FontWeight.w100,
-                      fontSize: 92,
+                      fontSize: 50,
                     ),
                   ),
                 ).animated([animationsMap['textOnPageLoadAnimation']]),
@@ -250,12 +250,12 @@ class _CarParkingWidgetState extends State<CarParkingWidget>
                   AutoSizeText(
                     'Hours',
                     textAlign: TextAlign.center,
-                    style: FlutterFlowTheme.subtitle2.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    style: FlutterFlowTheme.of(context).subtitle2.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
                   ),
                 ],
               ).animated([animationsMap['rowOnPageLoadAnimation1']]),
@@ -269,12 +269,12 @@ class _CarParkingWidgetState extends State<CarParkingWidget>
                   AutoSizeText(
                     'Vehicle is out',
                     textAlign: TextAlign.center,
-                    style: FlutterFlowTheme.subtitle2.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Color(0xFF95A1AC),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    style: FlutterFlowTheme.of(context).subtitle2.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Color(0xFF95A1AC),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
                   ),
                 ],
               ).animated([animationsMap['rowOnPageLoadAnimation2']]),
@@ -322,22 +322,23 @@ class _CarParkingWidgetState extends State<CarParkingWidget>
                         padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
                         child: Text(
                           'Parked',
-                          style: FlutterFlowTheme.bodyText2.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF8B97A2),
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
-                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyText2.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF8B97A2),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                         ),
                       ),
                       Text(
                         'NO',
-                        style: FlutterFlowTheme.title1.override(
-                          fontFamily: 'Lexend Deca',
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: FlutterFlowTheme.of(context).title1.override(
+                              fontFamily: 'Lexend Deca',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
                       ),
                     ],
                   ),
@@ -349,22 +350,23 @@ class _CarParkingWidgetState extends State<CarParkingWidget>
                         padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
                         child: Text(
                           'Range',
-                          style: FlutterFlowTheme.bodyText2.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF8B97A2),
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
-                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyText2.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF8B97A2),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                         ),
                       ),
                       Text(
                         'Far',
-                        style: FlutterFlowTheme.title1.override(
-                          fontFamily: 'Lexend Deca',
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: FlutterFlowTheme.of(context).title1.override(
+                              fontFamily: 'Lexend Deca',
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
                       ),
                     ],
                   ),
@@ -376,27 +378,106 @@ class _CarParkingWidgetState extends State<CarParkingWidget>
                         padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
                         child: Text(
                           'Status',
-                          style: FlutterFlowTheme.bodyText2.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF8B97A2),
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
-                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyText2.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF8B97A2),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                         ),
                       ),
                       Text(
                         'Good',
-                        style: FlutterFlowTheme.title1.override(
-                          fontFamily: 'Lexend Deca',
-                          color: Color(0xFF39D2C0),
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: FlutterFlowTheme.of(context).title1.override(
+                              fontFamily: 'Lexend Deca',
+                              color: Color(0xFF39D2C0),
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
                       ),
                     ],
                   ),
                 ],
               ).animated([animationsMap['rowOnPageLoadAnimation4']]),
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                          child: Text(
+                            'You have Pothole',
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: Color(0xFFFAF9F9),
+                                    ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 30, 0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFB9FF05),
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 30, 0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFDA1111),
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Container(
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFDA1111),
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
             ),
             Container(
               height: 200,
@@ -420,12 +501,14 @@ class _CarParkingWidgetState extends State<CarParkingWidget>
                             children: [
                               Text(
                                 'Car is Running',
-                                style: FlutterFlowTheme.subtitle1.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle1
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                               ),
                               Expanded(
                                 child: Padding(
@@ -433,12 +516,14 @@ class _CarParkingWidgetState extends State<CarParkingWidget>
                                       16, 8, 16, 0),
                                   child: Text(
                                     'Park your vechile in stimulated location',
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Color(0xB3FFFFFF),
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.normal,
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: Color(0xB3FFFFFF),
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.normal,
+                                        ),
                                   ),
                                 ),
                               ),

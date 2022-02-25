@@ -38,7 +38,7 @@ class _Forum1WidgetState extends State<Forum1Widget> {
                 width: MediaQuery.of(context).size.width * 0.95,
                 height: 200,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.tertiaryColor,
+                  color: FlutterFlowTheme.of(context).tertiaryColor,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Column(
@@ -78,7 +78,7 @@ class _Forum1WidgetState extends State<Forum1Widget> {
                               children: [
                                 Text(
                                   'Name',
-                                  style: FlutterFlowTheme.bodyText1,
+                                  style: FlutterFlowTheme.of(context).bodyText1,
                                 ),
                               ],
                             ),
@@ -88,11 +88,13 @@ class _Forum1WidgetState extends State<Forum1Widget> {
                               children: [
                                 Text(
                                   'Posted date',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 8,
-                                    fontWeight: FontWeight.w300,
-                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        fontSize: 8,
+                                        fontWeight: FontWeight.w300,
+                                      ),
                                 ),
                               ],
                             ),
@@ -111,9 +113,6 @@ class _Forum1WidgetState extends State<Forum1Widget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 hintText: 'Post',
-                                hintStyle: FlutterFlowTheme.bodyText2.override(
-                                  fontFamily: 'Open Sans',
-                                ),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -136,9 +135,11 @@ class _Forum1WidgetState extends State<Forum1Widget> {
                                 ),
                                 filled: true,
                               ),
-                              style: FlutterFlowTheme.bodyText2.override(
-                                fontFamily: 'Open Sans',
-                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText2
+                                  .override(
+                                    fontFamily: 'Open Sans',
+                                  ),
                               maxLines: 3,
                             ),
                           ),
@@ -152,11 +153,12 @@ class _Forum1WidgetState extends State<Forum1Widget> {
                         children: [
                           Text(
                             '#tags',
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Poppins',
-                              fontSize: 10,
-                              fontWeight: FontWeight.w300,
-                            ),
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w300,
+                                    ),
                           ),
                         ],
                       ),
@@ -202,11 +204,12 @@ class _Forum1WidgetState extends State<Forum1Widget> {
                                         0, 0, 5, 0),
                                     child: Text(
                                       'Read time',
-                                      style:
-                                          FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 8,
-                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            fontSize: 8,
+                                          ),
                                     ),
                                   ),
                                   FFButtonWidget(
@@ -217,13 +220,15 @@ class _Forum1WidgetState extends State<Forum1Widget> {
                                     options: FFButtonOptions(
                                       width: 60,
                                       height: 25,
-                                      color: FlutterFlowTheme.primaryColor,
-                                      textStyle:
-                                          FlutterFlowTheme.subtitle2.override(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.white,
-                                        fontSize: 10,
-                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .subtitle2
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: Colors.white,
+                                            fontSize: 10,
+                                          ),
                                       borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1,

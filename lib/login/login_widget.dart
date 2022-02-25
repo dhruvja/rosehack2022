@@ -70,11 +70,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   hintText: 'Username',
-                                  hintStyle: GoogleFonts.getFont(
-                                    'Lato',
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                  ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0xFF3C2452),
@@ -129,11 +124,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 obscureText: !passwordVisibility,
                                 decoration: InputDecoration(
                                   hintText: 'Password',
-                                  hintStyle: GoogleFonts.getFont(
-                                    'Lato',
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                  ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0xFF3C2452),
