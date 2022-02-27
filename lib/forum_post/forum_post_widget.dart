@@ -1,8 +1,6 @@
-import '../backend/firebase_storage/storage.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../flutter_flow/upload_media.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -99,35 +97,8 @@ class _ForumPostWidgetState extends State<ForumPostWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   FFButtonWidget(
-                    onPressed: () async {
-                      final selectedMedia = await selectMedia(
-                        mediaSource: MediaSource.photoGallery,
-                      );
-                      if (selectedMedia != null &&
-                          validateFileFormat(
-                              selectedMedia.storagePath, context)) {
-                        showUploadMessage(
-                          context,
-                          'Uploading file...',
-                          showLoading: true,
-                        );
-                        final downloadUrl = await uploadData(
-                            selectedMedia.storagePath, selectedMedia.bytes);
-                        ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                        if (downloadUrl != null) {
-                          setState(() => uploadedFileUrl = downloadUrl);
-                          showUploadMessage(
-                            context,
-                            'Success!',
-                          );
-                        } else {
-                          showUploadMessage(
-                            context,
-                            'Failed to upload media',
-                          );
-                          return;
-                        }
-                      }
+                    onPressed: () {
+                      print('Button pressed ...');
                     },
                     text: 'Change Photo',
                     options: FFButtonOptions(

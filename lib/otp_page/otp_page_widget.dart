@@ -1,8 +1,6 @@
-import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -117,29 +115,8 @@ class _OtpPageWidgetState extends State<OtpPageWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                 child: FFButtonWidget(
-                  onPressed: () async {
-                    if (phoneNumberController.text.isEmpty) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text('Enter SMS verification code.'),
-                        ),
-                      );
-                      return;
-                    }
-                    final phoneVerifiedUser = await verifySmsCode(
-                      context: context,
-                      smsCode: phoneNumberController.text,
-                    );
-                    if (phoneVerifiedUser == null) {
-                      return;
-                    }
-                    await Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => NavBarPage(initialPage: 'Home'),
-                      ),
-                      (r) => false,
-                    );
+                  onPressed: () {
+                    print('Button-Login pressed ...');
                   },
                   text: 'Verify Code',
                   options: FFButtonOptions(
